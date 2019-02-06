@@ -1,0 +1,87 @@
+﻿@model DA.Models.Request
+
+@{
+    ViewBag.Title = "Approval1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string approveAction = ViewBag.ApproveAction as string;
+    string declineAction = ViewBag.DeclineAction as string;
+}
+
+<h2>Approval1</h2>
+
+<div>
+    <h4>Request</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkflowInstanceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkflowInstanceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookMark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookMark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WithRequirements)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WithRequirements)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WithException)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WithException)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("<<Back", "Index", "Requests")|
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Approve", approveAction, new { Id = Model.Id }) | @Html.ActionLink("Decline", declineAction, new { Id = Model.Id })
+   
+</p>

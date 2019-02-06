@@ -1,0 +1,125 @@
+﻿@model MerchantAquiringSystemWithWF.Models.RequestFormViewModel
+
+@{
+    // ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string requestStatus = ViewBag.status as string;
+    //Layout = "~/Views/Shared/_TabedLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+
+    <div class="row clearfix-custom" style="margin-top:5px;">
+        <div class="form-header">
+            <p class="header-title">
+                @ViewBag.status
+
+            </p>
+
+        </div>
+    </div>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.RequestType)
+       
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label col-md-2">
+                        @Html.DisplayNameFor(model => model.RequestType)
+                    </label>
+
+                    <div class="col-md-10">
+
+                        @*@Html.DisplayFor(model => model.RequestType, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @ViewBag.Title
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RequestDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.RequestDescription, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.RequestDescription, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.eMail, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.eMail, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.eMail, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.WorkflowInstanceId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WorkflowInstanceId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.WorkflowInstanceId, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+
+
+
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="float-md-right">
+                    <input type="submit" value="Save" class="btn btn-sm btn-primary" />
+                    @Html.ActionLink("Back", requestStatus, "RequestUIFlow", new { Id = Model.Id }, new { @class = "btn btn-sm btn-warning" })
+                </div>
+
+            </div>
+
+        </div>
+
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "DRAFT", "RequestUIFlow", new { Id = Model.Id },null)
+   
+</div>*@

@@ -1,0 +1,23 @@
+﻿<div class="row">
+    <div class="form-header">
+        <p class="header-title">
+            Create
+        </p>
+
+    </div>
+
+</div>
+
+<form ng-submit="vm.onSubmit()" novalidate>
+    <formly-form model="vm.model" fields="vm.fields" form="vm.form"> </formly-form>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="float-md-right">
+                <input type="submit" value="Create" class="btn btn-sm btn-primary" />
+              
+                <a ui-sref="index" class = "btn btn-sm btn-warning" >Back To List</a>
+            </div>
+        </div>
+    </div>
+</form>

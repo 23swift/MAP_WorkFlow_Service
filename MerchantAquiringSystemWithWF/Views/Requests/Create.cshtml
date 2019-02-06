@@ -1,0 +1,142 @@
+﻿@model MerchantAquiringSystemWithWF.Models.RequestFormViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var requestTypeList = ViewBag.requestTypeList as List<SelectListItem>;
+}
+
+<div class="row" style="margin-top:2px;">
+        <div class="form-header">
+            <p class="header-title">
+                Create
+            </p>
+
+        </div>
+
+    </div>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+
+        @*<h4>RequestFormViewModel</h4>*@
+        <hr />
+        @Html.ValidationSummary(true)
+	
+
+  
+		<div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RequestType, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+
+                        @Html.DropDownListFor(model => model.RequestType, requestTypeList, htmlAttributes: new { @class = "form-control", @width = "300px" })
+                    </div>
+                </div>
+            </div>
+
+		
+  
+		<div class="col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.RequestDescription, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+	   
+	     	@Html.EditorFor(model => model.RequestDescription, new { htmlAttributes = new { @class = "form-control" } })
+              
+            </div>
+        </div>
+	</div>
+
+		
+  
+		<div class="col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.CreatedDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+			
+			@Html.TextBoxFor(model => model.CreatedDate, String.Format("{0:d}", DateTime.Now.ToShortDateString()), new { @class = "datefield form-control", type = "text" })
+              
+            </div>
+        </div>
+	</div>
+
+		</div>
+		
+  
+		<div class="row">
+		<div class="col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.CreatedBy, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+	   
+	     	@Html.EditorFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+              
+            </div>
+        </div>
+	</div>
+
+		
+  
+		<div class="col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.WithRequirements, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+			@Html.CheckBoxFor(model => model.WithRequirements)
+              
+            </div>
+        </div>
+	</div>
+
+		
+  
+		<div class="col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.WithException, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+			@Html.CheckBoxFor(model => model.WithException)
+              
+            </div>
+        </div>
+	</div>
+
+		</div>
+		
+  
+		<div class="row">
+		<div class="col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.eMail, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+	   
+	     	@Html.EditorFor(model => model.eMail, new { htmlAttributes = new { @class = "form-control" } })
+              
+            </div>
+        </div>
+	</div>
+
+		
+	
+</div>
+<hr />
+<div class="row">
+	<div class="col-md-12">
+       <div class="float-md-right">
+                      @*<input type="submit" value="Create" class="btn btn-sm btn-primary" />*@
+           <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+               create
+           </button>
+                      @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-sm btn-warning" })
+                  </div>
+	</div>
+ </div>
+
+
+}
+
+
+    
+

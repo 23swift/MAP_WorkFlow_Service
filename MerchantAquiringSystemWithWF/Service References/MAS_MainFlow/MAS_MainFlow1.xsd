@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="LoadRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inRequestId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="outMsg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AOChecking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inRequestId" type="xs:int" />
+        <xs:element minOccurs="0" name="inIsComplete" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AOCheckingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="outMsg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitToAOChecker">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inRequestId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitToAOCheckerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="outMsg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreScreenDecission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramRequestId" type="xs:int" />
+        <xs:element minOccurs="0" name="paramIsPassedScreening" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreScreenDecissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="outMsg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPOSRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramRequestId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramRequestId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="outMsg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QualityApproval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inRequestId" type="xs:int" />
+        <xs:element minOccurs="0" name="_isApproved" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QualityApprovalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="outMsg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinalApproval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inRequestId" type="xs:int" />
+        <xs:element minOccurs="0" name="inApproved" type="xs:boolean" />
+        <xs:element minOccurs="0" name="inApprover" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inApproverRank" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinalApprovalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="outMsg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PickRequestForMDCSProcessing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inRequestId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PickRequestForMDCSProcessingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="outMsg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitForPOSProcessing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramRequestId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitForPOSProcessingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="outMsg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestApproval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inRequestId" type="xs:int" />
+        <xs:element minOccurs="0" name="inApproved" type="xs:boolean" />
+        <xs:element minOccurs="0" name="inApprover" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inApproverRank" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestApprovalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="outMsg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnToMakerFormApproval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inRequestId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

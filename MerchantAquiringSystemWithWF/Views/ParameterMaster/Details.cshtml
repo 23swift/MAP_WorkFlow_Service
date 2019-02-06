@@ -1,0 +1,89 @@
+﻿@model MAS.Models.MaintenanceMaster
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <h4>MaintenanceMaster</h4>
+	<hr />
+    <div class="row">
+
+	<div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label col-md-2">
+			@Html.DisplayNameFor(model => model.Description)
+			</label>
+
+            <div class="col-md-10">
+	   
+	     	@Html.DisplayFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+              
+            </div>
+        </div>
+	</div>
+        
+
+
+	<div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label col-md-2">
+			@Html.DisplayNameFor(model => model.Code)
+			</label>
+
+            <div class="col-md-10">
+	   
+	     	@Html.DisplayFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+              
+            </div>
+        </div>
+	</div>
+        
+
+    </div>
+   
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p class="float-right">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+   
+</div>
+
+
+   
+
+        <div class="card bg-primary mb-3">
+            <div class="card-header">
+
+                @ViewBag.Title
+
+
+                @Html.ActionLink("+", "Create", null, new { @class = "btn btn-sm btn-warning float-right" })
+
+            </div>
+
+            <ul class="list-group">
+                @foreach (var item in Model.MaintenanceDetails)
+                {
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        @item.Value
+                        <i class="fa fa-edit float-right"></i>
+                    </li>
+                }
+                
+               
+            </ul>
+
+
+
+        </div>
+
+    

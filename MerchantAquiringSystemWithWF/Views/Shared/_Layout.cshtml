@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryUI")
+
+    @Scripts.Render("~/bundles/vendor")
+    @Scripts.Render("~/bundles/app")
+    
+</head>
+<body ng-app="map">
+    @{ 
+
+        ViewBag.virtualDir = HttpRuntime.AppDomainAppVirtualPath.Equals("/") ? HttpRuntime.AppDomainAppVirtualPath.Replace("/", "").Trim() : HttpRuntime.AppDomainAppVirtualPath.Trim() + "/";
+    }
+    <input type="hidden" value="@ViewBag.virtualDir " id="virtualDir" />
+    <div class="row" style="margin-bottom:5px;margin-top:3px;border-bottom: 2px solid #ff9800;">
+        <div class="col-md-3">
+            <img src=@Url.Content("~/Content/images/logo.png") style="margin-bottom:2px;" />
+        </div>
+        <div class="col-md-9">
+            <span id="dateNow" class="float-right"></span>  
+            <br />  
+            <span class="float-right"><i class="fa fa-user-circle-o fa-2x text-warning"></i> Arnold Costamero</span>    
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Merchant Acquiring System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  
+                    @Html.ActionLink("Home", "Index", "Requests", null, new { @class="nav-link"})
+                </li>
+                <li class="nav-item dropdown">
+                   
+                    @*@Html.ActionLink("Request", "Index", "Requests",null, new { @class = "nav-link" })*@
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Request</a>
+                    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 35px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        @Html.ActionLink("New Affiliation", "Index", "NewAffiliation", null, new { @class = "dropdown-item" })
+
+                        @Html.ActionLink("Branch Affiliation", "Index", "ApprovalSetup", null, new { @class = "dropdown-item" })
+                        <a class="dropdown-item" href="#">POS</a>
+                        <a class="dropdown-item" href="#">File Maintenance</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Additional Facility</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administrator</a>
+                    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 35px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        @Html.ActionLink("Parameter Maintenance", "Index", "ParameterMaster", null, new { @class = "dropdown-item" })
+                        @Html.ActionLink("Approval Matrix", "Index", "ApprovalSetup", null, new { @class = "dropdown-item" })
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </li>
+               
+                <li class="nav-item">
+                  
+                    @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary btn-sm my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        @RenderBody()
+        
+    </div>
+    <hr style="margin-top:10px;" />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Merchant Acquiring  System By IT DEV CLG</p>
+    </footer>
+
+
+    <div class="modal  fade" data-backdrop="static" id="progressModal" tabindex="-1" role="dialog" aria-labelledby="progressModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary"><i class="fa fa-cog fa-2x fa-spin"></i> Please wait...</h5>
+                   
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+  
+   
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/moment")
+    
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+       
+            $(function () {
+                //$("input[type='date']")
+                //        .datepicker()
+                //        //.get(0)
+                //        .setAttribute("type", "text");
+                $(".datefield").datepicker().datepicker("setDate", new Date());
+                $('nav a[href!="#"]').on('click', function () {
+                  
+                    if ($(this).prop('href') != window.location) {
+                        $('#progressModal').modal('show');
+                    }
+                    
+                });
+                $('input[type="submit"]').on('click', function () {
+
+                    $('#progressModal').modal('show');
+                });
+                var now = moment();
+                console.log(now.format());
+                $('#dateNow').html('Today: ' +now.format('MM-DD-YYYY'));
+            });
+       
+    </script>
+ 
+</body>
+</html>

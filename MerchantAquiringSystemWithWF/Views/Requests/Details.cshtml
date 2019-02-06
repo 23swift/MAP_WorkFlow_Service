@@ -1,0 +1,70 @@
+﻿@model DA.Models.Request
+
+@{
+    ViewBag.Title = "Details";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_TabedLayout.cshtml";
+    string routeView = (string)ViewBag.view;
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Request</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkflowInstanceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkflowInstanceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookMark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookMark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Submit For Checking", routeView, "RequestUIFlow", new { id = Model.Id },null)
+</p>

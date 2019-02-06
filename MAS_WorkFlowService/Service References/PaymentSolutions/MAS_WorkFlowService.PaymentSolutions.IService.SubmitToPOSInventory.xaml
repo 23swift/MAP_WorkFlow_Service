@@ -1,0 +1,84 @@
+<Activity mc:Ignorable="sap2010 sads" x:Class="MAS_WorkFlowService.PaymentSolutions.Activities.SubmitToPOSInventory" this:SubmitToPOSInventory.EndpointConfigurationName="BasicHttpBinding_IService"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mp="clr-namespace:MAS_WorkFlowService.PaymentSolutions;assembly=MAS_WorkFlowService, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+ xmlns:mp1="clr-namespace:MAS_WorkFlowService.PaymentSolutions;assembly=MAS_WorkFlowService"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:p="http://tempuri.org/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.ComponentModel;assembly=System"
+ xmlns:this="clr-namespace:MAS_WorkFlowService.PaymentSolutions.Activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="EndpointConfigurationName" Type="x:String">
+      <x:Property.Attributes>
+        <sc:DefaultValueAttribute>
+          <x:Arguments>
+            <x:String>BasicHttpBinding_IService</x:String>
+          </x:Arguments>
+        </sc:DefaultValueAttribute>
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="paramPOSRequestId" Type="InArgument(x:Int32)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="paramIsComplete" Type="InArgument(x:Boolean)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="outMsg" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Sequence>
+    <Sequence.Variables>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+    </Sequence.Variables>
+    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IService/SubmitToPOSInventory" OperationName="SubmitToPOSInventory" ServiceContractName="p:IService">
+      <p1:Send.CorrelationInitializers>
+        <p1:RequestReplyCorrelationInitializer>
+          <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+            <InArgument x:TypeArguments="p1:CorrelationHandle">
+              <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue.Variable>
+                  <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                </VariableValue.Variable>
+              </VariableValue>
+            </InArgument>
+          </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+        </p1:RequestReplyCorrelationInitializer>
+      </p1:Send.CorrelationInitializers>
+      <p1:SendMessageContent>
+        <InArgument x:TypeArguments="mp1:SubmitToPOSInventoryRequest">[New MAS_WorkFlowService.PaymentSolutions.SubmitToPOSInventoryRequest() With { .paramPOSRequestId = paramPOSRequestId, .paramIsComplete = paramIsComplete }]</InArgument>
+      </p1:SendMessageContent>
+      <p1:Send.EndpointConfigurationName>
+        <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+      </p1:Send.EndpointConfigurationName>
+    </p1:Send>
+    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IService/SubmitToPOSInventoryResponse">
+      <p1:ReceiveMessageContent>
+        <OutArgument x:TypeArguments="mp1:SubmitToPOSInventoryResponse">
+          <VariableReference x:TypeArguments="mp1:SubmitToPOSInventoryResponse">
+            <VariableReference.Variable>
+              <Variable x:TypeArguments="mp1:SubmitToPOSInventoryResponse" x:Name="__ReferenceID1" Name="tempResult_ebc691f5e3894e77aa15ec04c55720ee" />
+            </VariableReference.Variable>
+          </VariableReference>
+        </OutArgument>
+      </p1:ReceiveMessageContent>
+    </p1:ReceiveReply>
+    <Assign>
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[outMsg]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[tempResult_ebc691f5e3894e77aa15ec04c55720ee.outMsg]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <sads:DebugSymbol.Symbol>d9YBQzpcVXNlcnNcYTAxMjAwMTE2NFxEb2N1bWVudHNcVmlzdWFsIFN0dWRpbyAyMDE1XFByb2plY3RzXE1lcmNoYW50QXF1aXJpbmdTeXN0ZW1XaXRoV0ZcTUFTX1dvcmtGbG93U2VydmljZVxTZXJ2aWNlIFJlZmVyZW5jZXNcUGF5bWVudFNvbHV0aW9uc1xNQVNfV29ya0Zsb3dTZXJ2aWNlLlBheW1lbnRTb2x1dGlvbnMuSVNlcnZpY2UuU3VibWl0VG9QT1NJbnZlbnRvcnkueGFtbAklA1MOAgEBKgU+DwIBCj8FSRcCAQdKBVEOAgECOUc54wECAQwvDzMfAgELQgtGHwIBCU8wT2QCAQVMMUw5AgED</sads:DebugSymbol.Symbol>
+  </Sequence>
+</Activity>

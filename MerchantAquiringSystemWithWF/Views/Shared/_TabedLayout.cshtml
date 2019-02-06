@@ -1,0 +1,113 @@
+﻿@using MAS_WorkFlowService;
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string controllerName = Convert.ToString(HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"]);
+    //string actionName = Convert.ToString(HttpContext.Current.Request.RequestContext.RouteData.Values["Action"]);
+    string actionName = ViewBag.actionName as string;
+    string requesStatus = ViewBag.status as string;
+    int requestId = 0;
+    if (HttpContext.Current.Request.RequestContext.RouteData.Values["id"] != null)
+    {
+        requestId = Int32.Parse(HttpContext.Current.Request.RequestContext.RouteData.Values["id"].ToString());
+
+    }
+
+
+}
+
+   <ul class="nav nav-tabs" style="margin-top:3px;">
+    <li class="nav-item">
+
+
+        @*<a class="nav-link active" data-toggle="tab" href="#home">Home</a>*@
+        @switch (requesStatus)
+        {
+            case RequestStatusConstants.DRAFT:
+                if (controllerName == "RequestUIFlow" || controllerName == "Requests")
+                {
+                    @Html.ActionLink("Request", RequestStatusConstants.DRAFT, "RequestUIFlow", new { Id = requestId }, new { @class = "nav-link active" })
+                }
+                else
+                {
+                    @Html.ActionLink("Request", RequestStatusConstants.DRAFT, "RequestUIFlow", new { Id = requestId }, new { @class = "nav-link" })
+                }
+                break;
+
+            case RequestStatusConstants.AO_CHECKING:
+                    if (controllerName == "RequestUIFlow" || controllerName == "Requests")
+                    {
+                        @Html.ActionLink("Request", RequestStatusConstants.AO_CHECKING, "RequestUIFlow", new { Id = requestId }, new { @class = "nav-link active" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Request", RequestStatusConstants.AO_CHECKING, "RequestUIFlow", new { Id = requestId }, new { @class = "nav-link" })
+                }
+
+                break;
+            case RequestStatusConstants.MAU_SCREENING:
+                if (controllerName == "RequestUIFlow" || controllerName == "Requests")
+                {
+                    @Html.ActionLink("Request", RequestStatusConstants.MAU_SCREENING, "RequestUIFlow", new { Id = requestId }, new { @class = "nav-link active" })
+                }
+                else
+                {
+                    @Html.ActionLink("Request", RequestStatusConstants.MAU_SCREENING, "RequestUIFlow", new { Id = requestId }, new { @class = "nav-link" })
+                }
+
+                break;
+            case RequestStatusConstants.MDCS_PROCESSING:
+                if (controllerName == "RequestUIFlow" || controllerName == "Requests")
+                {
+                    @Html.ActionLink("Request", RequestStatusConstants.MDCS_PROCESSING, "RequestUIFlow", new { Id = requestId }, new { @class = "nav-link active" })
+                }
+                else
+                {
+                    @Html.ActionLink("Request", RequestStatusConstants.MDCS_PROCESSING, "RequestUIFlow", new { Id = requestId }, new { @class = "nav-link" })
+                }
+
+                break;
+
+        }
+
+
+
+    </li>
+    <li class="nav-item">
+        @*<a class="nav-link" data-toggle="tab" href="#profile">Profile</a>*@
+        @if (requesStatus == RequestStatusConstants.DRAFT || requesStatus == RequestStatusConstants.AO_CHECKING)
+
+                {
+            <a class="nav-link disabled" href="#">Merchant Acquiring Evaluation Form</a>
+
+        }
+        else
+        {
+            if (controllerName == "MAEF")
+            {
+                @Html.ActionLink("Merchant Acquiring Evaluation Form", "MAEFDetails", "MAEF", new { Id = requestId }, new { @class = "nav-link active" })
+            }
+            else
+            {
+                @Html.ActionLink("Merchant Acquiring Evaluation Form", "MAEFDetails", "MAEF", new { Id = requestId }, new { @class = "nav-link" })
+            }
+        }
+
+
+
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#">History</a>
+    </li>
+      
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade show active">
+        @RenderBody()
+    </div>
+    
+</div>
+   
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+

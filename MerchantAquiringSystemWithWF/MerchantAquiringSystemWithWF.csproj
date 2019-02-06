@@ -1,0 +1,812 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{102EB302-7E6C-4345-AC4B-C3424F26B66F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MerchantAquiringSystemWithWF</RootNamespace>
+    <AssemblyName>MerchantAquiringSystemWithWF</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.ServiceModel.Channels" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ApprovalSetupController.cs" />
+    <Compile Include="Controllers\BranchController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MAEFController.cs" />
+    <Compile Include="Controllers\NewAffiliationController.cs" />
+    <Compile Include="Controllers\ParameterMasterController.cs" />
+    <Compile Include="Controllers\RequestsController.cs" />
+    <Compile Include="Controllers\RequestUIFlowController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApprovalSetupViewModel.cs" />
+    <Compile Include="Models\RequestStatusViewModel.cs" />
+    <Compile Include="Models\RequestVieweModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\MAS_MainFlow\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\Site.css" />
+    <Content Include="CodeTemplates - Copy\PackageVersions.xml" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\Site.css" />
+    <Content Include="CodeTemplates\PackageVersions.xml" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\cerulean\bootstrap.css" />
+    <Content Include="Content\bootswatch\cerulean\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\cosmo\bootstrap.css" />
+    <Content Include="Content\bootswatch\cosmo\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\cyborg\bootstrap.css" />
+    <Content Include="Content\bootswatch\cyborg\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\darkly\bootstrap.css" />
+    <Content Include="Content\bootswatch\darkly\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\flatly\bootstrap.css" />
+    <Content Include="Content\bootswatch\flatly\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\journal\bootstrap.css" />
+    <Content Include="Content\bootswatch\journal\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\litera\bootstrap.css" />
+    <Content Include="Content\bootswatch\litera\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\lumen\bootstrap.css" />
+    <Content Include="Content\bootswatch\lumen\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\lux\bootstrap.css" />
+    <Content Include="Content\bootswatch\lux\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\materia\bootstrap.css" />
+    <Content Include="Content\bootswatch\materia\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\minty\bootstrap.css" />
+    <Content Include="Content\bootswatch\minty\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\pulse\bootstrap.css" />
+    <Content Include="Content\bootswatch\pulse\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\sandstone\bootstrap.css" />
+    <Content Include="Content\bootswatch\sandstone\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\simplex\bootstrap.css" />
+    <Content Include="Content\bootswatch\simplex\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\sketchy\bootstrap.css" />
+    <Content Include="Content\bootswatch\sketchy\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\slate\bootstrap.css" />
+    <Content Include="Content\bootswatch\slate\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\solar\bootstrap.css" />
+    <Content Include="Content\bootswatch\solar\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\spacelab\bootstrap.css" />
+    <Content Include="Content\bootswatch\spacelab\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\superhero\bootstrap.css" />
+    <Content Include="Content\bootswatch\superhero\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\united\bootstrap.css" />
+    <Content Include="Content\bootswatch\united\bootstrap.min.css" />
+    <Content Include="Content\bootswatch\yeti\bootstrap.css" />
+    <Content Include="Content\bootswatch\yeti\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\images\bdoLogo.png" />
+    <Content Include="Content\images\bdoLogoSmall.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="node_modules\%40uirouter\angularjs\artifacts.json" />
+    <Content Include="node_modules\%40uirouter\angularjs\CHANGELOG.md" />
+    <Content Include="node_modules\%40uirouter\angularjs\CONTRIBUTING.md" />
+    <Content Include="node_modules\%40uirouter\angularjs\DOCS.md" />
+    <Content Include="node_modules\%40uirouter\angularjs\downstream_projects.json" />
+    <Content Include="node_modules\%40uirouter\angularjs\ISSUE_TEMPLATE.md" />
+    <Content Include="node_modules\%40uirouter\angularjs\LICENSE" />
+    <Content Include="node_modules\%40uirouter\angularjs\package.json" />
+    <Content Include="node_modules\%40uirouter\angularjs\README.md" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\angular-ui-router.js" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\angular-ui-router.js.map" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\angular-ui-router.min.js" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\angular-ui-router.min.js.map" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\resolveService.js" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\resolveService.js.map" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\resolveService.min.js" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\resolveService.min.js.map" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\stateEvents.js" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\stateEvents.js.map" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\stateEvents.min.js" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\stateEvents.min.js.map" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\ui-router-angularjs.js" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\ui-router-angularjs.js.map" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\ui-router-angularjs.min.js" />
+    <Content Include="node_modules\%40uirouter\angularjs\release\ui-router-angularjs.min.js.map" />
+    <Content Include="node_modules\%40uirouter\angularjs\rollup.config.js" />
+    <Content Include="node_modules\%40uirouter\angularjs\typedoc.json" />
+    <Content Include="node_modules\%40uirouter\angularjs\yarn.lock" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\dist\angular-formly-templates-bootstrap.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\dist\angular-formly-templates-bootstrap.min.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\gulpfile.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\index.html" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\package.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\scripts\webpack-overrides.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\angular-fix\index.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\index.common.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\index.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\index.test.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\run\addons.html" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\run\addons.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\run\description.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\run\index.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\types\checkbox.html" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\types\checkbox.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\types\index.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\types\input.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\types\multiCheckbox.html" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\types\multiCheckbox.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\types\radio.html" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\types\radio.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\types\select.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\types\textarea.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\wrappers\has-error.html" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\wrappers\index.js" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\src\wrappers\label.html" />
+    <Content Include="node_modules\angular-formly\dist\formly.js" />
+    <Content Include="node_modules\angular-formly\dist\formly.min.js" />
+    <Content Include="node_modules\angular-formly\gulpfile.js" />
+    <Content Include="node_modules\angular-formly\package.js" />
+    <Content Include="node_modules\angular-formly\src\angular-fix\index.js" />
+    <Content Include="node_modules\angular-formly\src\directives\formly-custom-validation.js" />
+    <Content Include="node_modules\angular-formly\src\directives\formly-custom-validation.test.js" />
+    <Content Include="node_modules\angular-formly\src\directives\formly-field.js" />
+    <Content Include="node_modules\angular-formly\src\directives\formly-field.test.js" />
+    <Content Include="node_modules\angular-formly\src\directives\formly-focus.js" />
+    <Content Include="node_modules\angular-formly\src\directives\formly-focus.test.js" />
+    <Content Include="node_modules\angular-formly\src\directives\formly-form.controller.js" />
+    <Content Include="node_modules\angular-formly\src\directives\formly-form.controller.test.js" />
+    <Content Include="node_modules\angular-formly\src\directives\formly-form.js" />
+    <Content Include="node_modules\angular-formly\src\directives\formly-form.test.js" />
+    <Content Include="node_modules\angular-formly\src\index.common.js" />
+    <Content Include="node_modules\angular-formly\src\index.js" />
+    <Content Include="node_modules\angular-formly\src\index.test.js" />
+    <Content Include="node_modules\angular-formly\src\providers\formlyApiCheck.js" />
+    <Content Include="node_modules\angular-formly\src\providers\formlyApiCheck.test.js" />
+    <Content Include="node_modules\angular-formly\src\providers\formlyConfig.js" />
+    <Content Include="node_modules\angular-formly\src\providers\formlyConfig.test.js" />
+    <Content Include="node_modules\angular-formly\src\providers\formlyUsability.js" />
+    <Content Include="node_modules\angular-formly\src\providers\formlyValidationMessages.js" />
+    <Content Include="node_modules\angular-formly\src\run\formlyCustomTags.js" />
+    <Content Include="node_modules\angular-formly\src\run\formlyCustomTags.test.js" />
+    <Content Include="node_modules\angular-formly\src\run\formlyNgModelAttrsManipulator.js" />
+    <Content Include="node_modules\angular-formly\src\run\formlyNgModelAttrsManipulator.test.js" />
+    <Content Include="node_modules\angular-formly\src\services\formlyUtil.js" />
+    <Content Include="node_modules\angular-formly\src\services\formlyUtil.test.js" />
+    <Content Include="node_modules\angular-formly\src\services\formlyWarn.js" />
+    <Content Include="node_modules\angular-formly\src\test.utils.js" />
+    <Content Include="node_modules\angular\angular-csp.css" />
+    <Content Include="node_modules\angular\angular.js" />
+    <Content Include="node_modules\angular\angular.min.js" />
+    <Content Include="node_modules\angular\index.js" />
+    <Content Include="node_modules\api-check\dist\api-check.js" />
+    <Content Include="node_modules\api-check\dist\api-check.min.js" />
+    <Content Include="node_modules\api-check\index.html" />
+    <Content Include="node_modules\api-check\src\api-check-util.js" />
+    <Content Include="node_modules\api-check\src\api-check-util.test.js" />
+    <Content Include="node_modules\api-check\src\api-check.js" />
+    <Content Include="node_modules\api-check\src\api-check.test.js" />
+    <Content Include="node_modules\api-check\src\bugs.test.js" />
+    <Content Include="node_modules\api-check\src\checkers.js" />
+    <Content Include="node_modules\api-check\src\checkers.test.js" />
+    <Content Include="node_modules\api-check\src\index.js" />
+    <Content Include="node_modules\api-check\src\index.test.js" />
+    <Content Include="node_modules\api-check\src\prs-plz.test.js" />
+    <Content Include="node_modules\api-check\src\test.utils.js" />
+    <Content Include="Scripts\app\app.constants.js" />
+    <Content Include="Scripts\app\app.module.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootswatch\yeti\_variables.scss" />
+    <Content Include="Content\bootswatch\yeti\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\united\_variables.scss" />
+    <Content Include="Content\bootswatch\united\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\superhero\_variables.scss" />
+    <Content Include="Content\bootswatch\superhero\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\spacelab\_variables.scss" />
+    <Content Include="Content\bootswatch\spacelab\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\solar\_variables.scss" />
+    <Content Include="Content\bootswatch\solar\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\slate\_variables.scss" />
+    <Content Include="Content\bootswatch\slate\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\sketchy\_variables.scss" />
+    <Content Include="Content\bootswatch\sketchy\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\simplex\_variables.scss" />
+    <Content Include="Content\bootswatch\simplex\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\sandstone\_variables.scss" />
+    <Content Include="Content\bootswatch\sandstone\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\pulse\_variables.scss" />
+    <Content Include="Content\bootswatch\pulse\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\minty\_variables.scss" />
+    <Content Include="Content\bootswatch\minty\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\materia\_variables.scss" />
+    <Content Include="Content\bootswatch\materia\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\lux\_variables.scss" />
+    <Content Include="Content\bootswatch\lux\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\lumen\_variables.scss" />
+    <Content Include="Content\bootswatch\lumen\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\litera\_variables.scss" />
+    <Content Include="Content\bootswatch\litera\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\journal\_variables.scss" />
+    <Content Include="Content\bootswatch\journal\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\flatly\_variables.scss" />
+    <Content Include="Content\bootswatch\flatly\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\darkly\_variables.scss" />
+    <Content Include="Content\bootswatch\darkly\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\cyborg\_variables.scss" />
+    <Content Include="Content\bootswatch\cyborg\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\cosmo\_variables.scss" />
+    <Content Include="Content\bootswatch\cosmo\_bootswatch.scss" />
+    <Content Include="Content\bootswatch\cerulean\_variables.scss" />
+    <Content Include="Content\bootswatch\cerulean\_bootswatch.scss" />
+    <Content Include="RequestConfig.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CodeTemplates\MvcView\List.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Edit.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Details.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Create.cs.t4" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="CodeTemplates - Copy\ApiControllerEmpty\Controller.cs.t4" />
+    <Content Include="CodeTemplates - Copy\ApiControllerEmpty\Controller.vb.t4" />
+    <Content Include="CodeTemplates - Copy\ApiControllerWithActions\Controller.cs.t4" />
+    <Content Include="CodeTemplates - Copy\ApiControllerWithActions\Controller.vb.t4" />
+    <Content Include="CodeTemplates - Copy\ApiControllerWithContext\Controller.cs.t4" />
+    <Content Include="CodeTemplates - Copy\ApiControllerWithContext\Controller.vb.t4" />
+    <Content Include="CodeTemplates - Copy\ApiDependencyCodeGenerator\Global.asax.cs.t4" />
+    <Content Include="CodeTemplates - Copy\ApiDependencyCodeGenerator\Global.asax.vb.t4" />
+    <Content Include="CodeTemplates - Copy\ApiDependencyCodeGenerator\Global.cs.t4" />
+    <Content Include="CodeTemplates - Copy\ApiDependencyCodeGenerator\Global.vb.t4" />
+    <Content Include="CodeTemplates - Copy\ApiDependencyCodeGenerator\WebApiConfig.cs.t4" />
+    <Content Include="CodeTemplates - Copy\ApiDependencyCodeGenerator\WebApiConfig.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcArea\Area.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcArea\Area.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcArea\web.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcArea\web.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcControllerEmpty\Controller.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcControllerEmpty\Controller.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcControllerWithActions\Controller.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcControllerWithActions\Controller.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcControllerWithContext\Controller.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcControllerWithContext\Controller.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\_Layout.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\_Layout.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\_ViewStart.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\_ViewStart.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\BundleConfig.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\BundleConfig.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\Error.cshtml" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\Error.vbhtml" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\FilterConfig.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\FilterConfig.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\Global.asax.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\Global.asax.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\Global.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\Global.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\RouteConfig.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\RouteConfig.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\web.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcFullDependencyCodeGenerator\web.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcMinimalDependencyCodeGenerator\Global.asax.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcMinimalDependencyCodeGenerator\Global.asax.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcMinimalDependencyCodeGenerator\Global.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcMinimalDependencyCodeGenerator\Global.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcMinimalDependencyCodeGenerator\RouteConfig.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcMinimalDependencyCodeGenerator\RouteConfig.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcMinimalDependencyCodeGenerator\web.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcMinimalDependencyCodeGenerator\web.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\Create.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\Create.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\Delete.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\Delete.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\Details.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\Details.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\Edit.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\Edit.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\Empty.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\Empty.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\Imports.include.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\List.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\List.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\ModelMetadataFunctions.cs.include.t4" />
+    <Content Include="CodeTemplates - Copy\MvcView\ModelMetadataFunctions.vb.include.t4" />
+    <Content Include="CodeTemplates - Copy\MvcViewWithoutModel\Empty.cs.t4" />
+    <Content Include="CodeTemplates - Copy\MvcViewWithoutModel\Empty.vb.t4" />
+    <Content Include="CodeTemplates - Copy\MvcViewWithoutModel\Imports.include.t4" />
+    <Content Include="CodeTemplates - Copy\ODataControllerWithContext\Controller.cs.t4" />
+    <Content Include="CodeTemplates - Copy\ODataControllerWithContext\Controller.vb.t4" />
+    <Content Include="CodeTemplates\ODataControllerWithContext\Controller.vb.t4" />
+    <Content Include="CodeTemplates\ODataControllerWithContext\Controller.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\ModelMetadataFunctions.vb.include.t4" />
+    <Content Include="CodeTemplates\MvcView\ModelMetadataFunctions.cs.include.t4" />
+    <Content Include="CodeTemplates\MvcView\List.vb.t4" />
+    <Content Include="CodeTemplates\MvcView\Imports.include.t4" />
+    <Content Include="CodeTemplates\MvcView\Empty.vb.t4" />
+    <Content Include="CodeTemplates\MvcView\Empty.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Edit.vb.t4" />
+    <Content Include="CodeTemplates\MvcView\Details.vb.t4" />
+    <Content Include="CodeTemplates\MvcView\Delete.vb.t4" />
+    <Content Include="CodeTemplates\MvcView\Delete.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Create.vb.t4" />
+    <Content Include="CodeTemplates\MvcViewWithoutModel\Imports.include.t4" />
+    <Content Include="CodeTemplates\MvcViewWithoutModel\Empty.vb.t4" />
+    <Content Include="CodeTemplates\MvcViewWithoutModel\Empty.cs.t4" />
+    <Content Include="CodeTemplates\MvcMinimalDependencyCodeGenerator\web.vb.t4" />
+    <Content Include="CodeTemplates\MvcMinimalDependencyCodeGenerator\web.cs.t4" />
+    <Content Include="CodeTemplates\MvcMinimalDependencyCodeGenerator\RouteConfig.vb.t4" />
+    <Content Include="CodeTemplates\MvcMinimalDependencyCodeGenerator\RouteConfig.cs.t4" />
+    <Content Include="CodeTemplates\MvcMinimalDependencyCodeGenerator\Global.vb.t4" />
+    <Content Include="CodeTemplates\MvcMinimalDependencyCodeGenerator\Global.cs.t4" />
+    <Content Include="CodeTemplates\MvcMinimalDependencyCodeGenerator\Global.asax.vb.t4" />
+    <Content Include="CodeTemplates\MvcMinimalDependencyCodeGenerator\Global.asax.cs.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\_ViewStart.vb.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\_ViewStart.cs.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\_Layout.vb.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\_Layout.cs.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\web.vb.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\web.cs.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\RouteConfig.vb.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\RouteConfig.cs.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\Global.vb.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\Global.cs.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\Global.asax.vb.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\Global.asax.cs.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\FilterConfig.vb.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\FilterConfig.cs.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\Error.vbhtml" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\Error.cshtml" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\BundleConfig.vb.t4" />
+    <Content Include="CodeTemplates\MvcFullDependencyCodeGenerator\BundleConfig.cs.t4" />
+    <Content Include="CodeTemplates\MvcControllerWithContext\Controller.vb.t4" />
+    <Content Include="CodeTemplates\MvcControllerWithContext\Controller.cs.t4" />
+    <Content Include="CodeTemplates\MvcControllerWithActions\Controller.vb.t4" />
+    <Content Include="CodeTemplates\MvcControllerWithActions\Controller.cs.t4" />
+    <Content Include="CodeTemplates\MvcControllerEmpty\Controller.vb.t4" />
+    <Content Include="CodeTemplates\MvcControllerEmpty\Controller.cs.t4" />
+    <Content Include="CodeTemplates\MvcArea\web.vb.t4" />
+    <Content Include="CodeTemplates\MvcArea\web.cs.t4" />
+    <Content Include="CodeTemplates\MvcArea\Area.vb.t4" />
+    <Content Include="CodeTemplates\MvcArea\Area.cs.t4" />
+    <Content Include="CodeTemplates\ApiDependencyCodeGenerator\WebApiConfig.vb.t4" />
+    <Content Include="CodeTemplates\ApiDependencyCodeGenerator\WebApiConfig.cs.t4" />
+    <Content Include="CodeTemplates\ApiDependencyCodeGenerator\Global.vb.t4" />
+    <Content Include="CodeTemplates\ApiDependencyCodeGenerator\Global.cs.t4" />
+    <Content Include="CodeTemplates\ApiDependencyCodeGenerator\Global.asax.vb.t4" />
+    <Content Include="CodeTemplates\ApiDependencyCodeGenerator\Global.asax.cs.t4" />
+    <Content Include="CodeTemplates\ApiControllerWithContext\Controller.vb.t4" />
+    <Content Include="CodeTemplates\ApiControllerWithContext\Controller.cs.t4" />
+    <Content Include="CodeTemplates\ApiControllerWithActions\Controller.vb.t4" />
+    <Content Include="CodeTemplates\ApiControllerWithActions\Controller.cs.t4" />
+    <Content Include="CodeTemplates\ApiControllerEmpty\Controller.vb.t4" />
+    <Content Include="CodeTemplates\ApiControllerEmpty\Controller.cs.t4" />
+    <Content Include="node_modules\angular-formly\.eslintignore" />
+    <Content Include="node_modules\angular-formly\.eslintrc" />
+    <Content Include="node_modules\angular-formly\.gitattributes" />
+    <Content Include="node_modules\angular-formly\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="node_modules\angular-formly\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="node_modules\angular-formly\.npmignore" />
+    <Content Include="node_modules\angular-formly\bower.json" />
+    <Content Include="node_modules\angular-formly\CHANGELOG.md" />
+    <Content Include="node_modules\angular-formly\CODE_OF_CONDUCT.md" />
+    <Content Include="node_modules\angular-formly\dist\formly.min.js.map" />
+    <Content Include="node_modules\angular-formly\LICENSE" />
+    <Content Include="node_modules\angular-formly\package.json" />
+    <Content Include="node_modules\angular-formly\PATRONS.md" />
+    <Content Include="node_modules\angular-formly\README.md" />
+    <Content Include="node_modules\angular\angular.min.js.gzip" />
+    <Content Include="node_modules\angular\angular.min.js.map" />
+    <Content Include="node_modules\angular\bower.json" />
+    <Content Include="node_modules\angular\LICENSE.md" />
+    <Content Include="node_modules\angular\package.json" />
+    <Content Include="node_modules\angular\README.md" />
+    <Content Include="node_modules\api-check\.eslintrc" />
+    <Content Include="node_modules\api-check\bower.json" />
+    <Content Include="node_modules\api-check\CHANGELOG.md" />
+    <Content Include="node_modules\api-check\dist\api-check.min.js.map" />
+    <Content Include="node_modules\api-check\LICENSE" />
+    <Content Include="node_modules\api-check\package.json" />
+    <Content Include="node_modules\api-check\README.md" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\.jshintrc" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\.npmignore" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\.travis.yml" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\bower.json" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\CHANGELOG.md" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\CONTRIBUTING.md" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\dist\angular-formly-templates-bootstrap.min.js.map" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\LICENSE" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\other\ERRORS_AND_WARNINGS.md" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\package.json" />
+    <Content Include="node_modules\angular-formly-templates-bootstrap\README.md" />
+    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.0.0.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <None Include="Service References\MAS_MainFlow\MAS_MainFlow.disco" />
+    <None Include="Service References\MAS_MainFlow\configuration91.svcinfo" />
+    <None Include="Service References\MAS_MainFlow\configuration.svcinfo" />
+    <Content Include="Service References\MAS_MainFlow\MerchantAquiringSystemWithWF.MAS_MainFlow.CheckPOSRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MAS_MainFlow\MerchantAquiringSystemWithWF.MAS_MainFlow.ReturnToMakerFormApprovalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\MAS_MainFlow\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\NewAffiliation\AO\Create.component.js" />
+    <Content Include="Views\NewAffiliation\AO\Create.html" />
+    <Content Include="Views\NewAffiliation\AO\Index.component.js" />
+    <Content Include="Views\NewAffiliation\AO\Index.html" />
+    <Content Include="Views\NewAffiliation\newAffiliation.service.js" />
+    <Content Include="Views\NewAffiliation\newaffiliation.route.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Requests\Delete.cshtml" />
+    <Content Include="Views\Requests\Details.cshtml" />
+    <Content Include="Views\Requests\Edit.cshtml" />
+    <Content Include="Views\Requests\Index.cshtml" />
+    <None Include="Service References\MAS_MainFlow\MAS_MainFlow.wsdl" />
+    <None Include="Service References\MAS_MainFlow\MAS_MainFlow.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MAS_MainFlow\MAS_MainFlow1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\RequestUIFlow\LoadRequestToWorkflow.cshtml" />
+    <Content Include="Views\RequestUIFlow\AO_CHECKING.cshtml" />
+    <Content Include="Views\RequestUIFlow\DRAFTX.cshtml" />
+    <Content Include="Views\RequestUIFlow\SubmitForPreScreen.cshtml" />
+    <Content Include="Views\RequestUIFlow\RETURN_TO_MAKER.cshtml" />
+    <Content Include="Views\RequestUIFlow\MAU_SCREENING.cshtml" />
+    <Content Include="Views\Requests\MAU_Edit.cshtml" />
+    <Content Include="Views\RequestUIFlow\SuccessView.cshtml" />
+    <Content Include="Views\RequestUIFlow\FOR_APPROVAL.cshtml" />
+    <Content Include="Views\RequestUIFlow\Approval2.cshtml" />
+    <Content Include="Views\Shared\_TabedLayout.cshtml" />
+    <Content Include="Views\Requests\RequestWithTab.cshtml" />
+    <Content Include="Views\Requests\RequestWithTabIndex.cshtml" />
+    <Content Include="Views\Requests\RequestWithTabProfile.cshtml" />
+    <Content Include="Views\MAEF\MAEFDetails.cshtml" />
+    <Content Include="Views\Branch\Create.cshtml" />
+    <Content Include="Views\Branch\Delete.cshtml" />
+    <Content Include="Views\Branch\Details.cshtml" />
+    <Content Include="Views\Branch\Edit.cshtml" />
+    <Content Include="Views\Branch\Index.cshtml" />
+    <Content Include="Views\RequestUIFlow\MDCS_PROCESSING.cshtml" />
+    <Content Include="Views\ApprovalSetup\Create.cshtml" />
+    <Content Include="Views\ApprovalSetup\Delete.cshtml" />
+    <Content Include="Views\ApprovalSetup\Details.cshtml" />
+    <Content Include="Views\ApprovalSetup\Edit.cshtml" />
+    <Content Include="Views\ApprovalSetup\Index.cshtml" />
+    <Content Include="Views\Requests\Create.cshtml" />
+    <Content Include="Views\RequestUIFlow\DRAFT.cshtml" />
+    <Content Include="Views\ParameterMaster\Delete.cshtml" />
+    <Content Include="Views\ParameterMaster\Details.cshtml" />
+    <Content Include="Views\ParameterMaster\Index.cshtml" />
+    <Content Include="Views\ParameterMaster\Create.cshtml" />
+    <Content Include="Views\ParameterMaster\Edit.cshtml" />
+    <Content Include="Views\Shared\partialSuccess.cshtml" />
+    <Content Include="Views\NewAffiliation\Index.cshtml" />
+    <Content Include="Views\NewAffiliation\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Shared\EditorTemplates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DA\DA.csproj">
+      <Project>{c1f0b500-4b11-49b0-8acb-5a00d390cc45}</Project>
+      <Name>DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MAS_WorkFlowService\MAS_WorkFlowService.csproj">
+      <Project>{e02a7787-8ec3-4f46-a2f0-b55093564485}</Project>
+      <Name>MAS_WorkFlowService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MAS_MainFlow\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64837</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64837/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

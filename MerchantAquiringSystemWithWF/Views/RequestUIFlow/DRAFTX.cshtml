@@ -1,0 +1,122 @@
+﻿@model MerchantAquiringSystemWithWF.Models.RequestFormViewModel
+@using MAS_WorkFlowService
+@{
+    ViewBag.Title = "DRAFT";
+    La}
+
+@*<h2>@ViewBag.Title</h2>*@
+
+<div>
+    <h4>@"~/Views/Shared/_Layout.cshtml"</h4>
+    <hr />
+    <dl>
+
+        <dt>
+            @"~/Views/Shared/_Layout.cshtml"
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.RequestType)
+        </dd>
+
+        <dt>
+            @Html.DisplayFor(model => model.RequestType, new { htmlAttributes = new { @class = "form-control" } })
+
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Status)*@
+            @Html.DisplayNameFor(model => model.RequestDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayFor(model => model.RequestDescription, new { htmlAttributes = new { @class = "form-control" } })
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.WithRequirements)
+        </dd>
+
+        <dt>
+            @Html.DisplayFor(model => model.WithRequirements, new { htmlAttributes = new { @class = "form-control" } })
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.WithException)
+        </dd>
+        <dt>
+            @Html.DisplayFor(model => model.WithException, new { htmlAttributes = new { @class = "form-control" } })
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.eMail)
+        </dd>
+
+    </dl>
+</div>
+
+<div class="row"  style="margin:0;padding:0;">
+    <div class="col-md-12" style="margin:0;padding:0;">
+        <div class="btn-group float-right" role="group" aria-label="Basic example">
+            @Html.DisplayFor(model => model.eMail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ActionLink("Edit", "Edit", "Requests", new { id = Model.Id }, new { @class = "btn btn-sm btn-warning" })
+            @Html.ActionLink("Submit For Checking", routeView, "RequestUIFlow", new { id = Model.Id }, new { @class = "btn btn-sm btn-warning" })
+
+        </div>
+        </div>
+    </div>
+
+<hr style="margin-top:10px;" />
+
+       
+
+ <div class="row" style="margin:0;padding:0; margin-top:10px;">
+            <div class="col-md-12" style="margin:0; padding:0;">
+                <div class="card bg-light mb-3">
+                    <div class="card-header">
+                        @ViewBag.Title
+                    Branches
+                </div>
+                <table class="table table-condensed card-body">
+                    <thead>
+                        <tr>
+                            <th>
+
+                                Branch name
+                            </th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model. Branches)
+                        {
+                         <tr>
+                                <td>@item.DBAName</td>
+                                <td>@item.dbaAddress1</td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+
+            </div>
+            </div>
+
+        </div>

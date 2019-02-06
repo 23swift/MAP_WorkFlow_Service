@@ -1,0 +1,1119 @@
+﻿@model DA.Models.Branch
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var requestId = ViewBag.RequestId as Int32?;
+}
+
+@*<h2>Create</h2>*@
+
+@*<hr />*@
+<div class="row clearfix-custom" style="margin-top:5px;">
+    <div class="form-header">
+        <p class="header-title">
+            Business Information
+        </p>
+
+    </div>
+</div>
+@using (Html.BeginForm(new { requestId = requestId }))
+{
+    @Html.AntiForgeryToken()
+    
+    @*<div class="form-horizontal">
+        <h4>Branch</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.DBAName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DBAName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DBAName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.legalName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.legalName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.legalName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.dbaAddress1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dbaAddress1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.dbaAddress1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dbaAddress2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dbaAddress2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.dbaAddress2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dbaAddress3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dbaAddress3, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.dbaAddress3, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.City_Id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.City_Id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.City_Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+      
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>*@
+    @*<div class="row" style="margin-bottom:10px;margin-top:3px;border-bottom: 2px solid #ff9800;">
+        <div class="col-md-3">
+            <img src=@Url.Content("~/Content/images/logo.png") style="margin-bottom:2px;" />
+        </div>
+        <div class="col-md-9">
+
+        </div>
+    </div>*@
+
+    
+ 
+        <div class="row">
+            <div class="col-md-12" ng-class="{'has-error' : branchform.businessName.$invalid}">
+              
+                <label class="control-label" for="businessName">Business / Legal Name</label>
+                @Html.EditorFor(model => model.legalName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.legalName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" ng-class="{'has-error' : branchform.branch.$invalid}">
+                <label class="control-label" for="branch">Branch Name</label>
+                <input class="form-control" type="text" id="branchbranch" name="branch" required ng-model="$ctrl.Branch.branch" />
+                <input-error error="branchform.branch.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" ng-class="{'has-error' : branchform.DBAName.$invalid}">
+                <label class="control-label" for="DBAName">DBA (Branch / Trade Name)</label>
+                @Html.EditorFor(model => model.DBAName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DBAName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4" ng-class="{'has-error' : branchform.businessRegNo.$invalid}">
+                <label class="control-label" for="businessRegNo">Registered Business Number</label>
+                <input class="form-control" type="text" id="businessRegNo" name="businessRegNo" disabled ng-model="$ctrl.Branch.businessRegNo" />
+                <input-error error="branchform.businessRegNo.$error"></input-error>
+            </div>
+            <div class="col-md-4">
+                <label class="control-label" for="adminContactperson">Administrator (Contact Person)</label>
+                @Html.EditorFor(model => model.adminContactperson, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.adminContactperson, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" ng-class="{'has-error' : branchform.dbaAddress1.$invalid}">
+                <label class="control-label" for="goodsServices">DBA (Branch / Outlet Address)</label>
+                @Html.EditorFor(model => model.dbaAddress1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.dbaAddress1, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.dbaAddress2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.dbaAddress2, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.dbaAddress3, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.dbaAddress3, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.dbaAddress4, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.dbaAddress4, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" ng-class="{'has-error' : branchform.dbaCity.$invalid}">
+                <label class="control-label" for="dbaCity">DBA City</label>
+                <select name="" class="form-control" ng-model="$ctrl.Branch.dbaCity" ng-options="city.City_Id as city.Description for city in $ctrl.cityList">
+                    <option value="0" selected>Select City</option>
+                </select>
+                <input-error error="branchform.dbaCity.$error"></input-error>
+            </div>
+            <div class="col-md-6" ng-class="{'has-error' : branchform.dbaZipCode.$invalid}">
+                <label class="control-label" for="dbaZipCode">ZipCode</label>
+                <select name="" class="form-control" ng-model="$ctrl.Branch.dbaZipCode" ng-options="zipCode.ZipCode_Id as zipCode.Description for zipCode in $ctrl.zipCodeList">
+                    <option value="0" selected>Select Zipcode</option>
+                </select>
+                <input-error error="branchform.dbaZipCode.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" ng-class="{'has-error' : branchform.goodsServices.$invalid}">
+                <label class="control-label" for="goodsServices">Description of Goods, Products and Services</label>
+                <input class="form-control" type="text" id="goodsServices" name="goodsServices" ng-model="$ctrl.Branch.goodsServices" />
+                <input-error error="branchform.goodsServices.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" ng-class="{'has-error' : branchform.phoneNo.$invalid}">
+                <label class="control-label" for="phoneNo">Branch / Outlet Phone Number</label>
+                <input class="form-control" type="text" id="phoneNo" name="phoneNo" ng-model="$ctrl.Branch.phoneNo" />
+                <input-error error="branchform.phoneNo.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.mobileNo.$invalid}">
+                <label class="control-label" for="mobileNo">Mobile Number</label>
+                <input class="form-control" type="text" id="mobileNo" name="mobileNo" ng-model="$ctrl.Branch.mobileNo" />
+                <input-error error="branchform.mobileNo.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.emailAddress.$invalid}">
+                <label class="control-label" for="emailAddress">E-Mail Address</label>
+                <input class="form-control" type="email" id="emailAddress" required name="emailAddress" ng-model="$ctrl.Branch.emailAddress" />
+                <input-error error="branchform.emailAddress.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.website.$invalid}">
+                <label class="control-label" for="website">Website</label>
+                <input class="form-control" type="text" id="website" name="website" ng-model="$ctrl.Branch.website" />
+                <input-error error="branchform.website.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" ng-class="{'has-error' : branchform.payment.$invalid}">
+                <div class="col-md-12 row">
+                    <label class="control-label" for="paymentMode">Payment Method (Please Select)</label>
+                </div>
+                <div class="col-md-6 row">
+                    <label><input type="radio" name="paymentMode" value="check" ng-model="$ctrl.Branch.paymentMode" /> Check</label>
+                </div>
+                <div class="col-md-6 row">
+                    <label><input type="radio" name="paymentMode" value="autoCredit" ng-model="$ctrl.Branch.paymentMode" /> Auto Credit</label>
+                </div>
+                <input-error error="branchform.payment.$error"></input-error>
+            </div>
+            <div class="col-md-2" ng-class="{'has-error' : branchform.settlementAcctNo.$invalid}">
+                <label class="control-label" for="settlementAcctNo">Settlement Account Number (For Crediting Payment)</label>
+                <input class="form-control" type="text" id="settlementAcctNo" name="settlementAcctNo" ng-model="$ctrl.Branch.settlementAcctNo" />
+                <input-error error="branchform.settlementAcctNo.$error"></input-error>
+            </div>
+            <div class="col-md-2">
+                <div class="col-md-12 row" ng-class="{'has-error' : branchform.withTax.$invalid}">
+                    <label class="control-label" for="withTax">Tax Code (Please Select)</label>
+                </div>
+                <div class="col-md-12 row" ng-class="{'has-error' : branchform.withTax.$invalid}">
+                    <label><input type="checkbox" id="withTax" name="withTax" ng-model="$ctrl.Branch.withTax" /> With Tax</label>
+                </div>
+                <input-error error="branchform.withTax.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.taxExemptFrom.$invalid || branchform.taxExemptTo.$invalid}">
+                <label class="control-label" for="taxExemptValidity">Tax Exempt Validity (mm/dd/yyyy)</label>
+                <div class="input-group">
+                    <input class="form-control datefield" type="text" placeholder="DATE FROM" id="" name="taxExemptFrom" ng-model="$ctrl.Branch.taxExemptFrom" />
+
+                </div>
+                <input-error error="branchform.taxExemptFrom.$error"></input-error>
+                <div class="input-group">
+                    <input class="form-control" type="text" uib-datepicker-popup="{{$ctrl.format}}" datepicker-options="$ctrl.dateOptions" placeholder="DATE TO" id="" is-open="$ctrl.datepickerObj.taxExemptTo" name="taxExemptTo" ng-model="$ctrl.Branch.taxExemptTo" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.toggleDatepicker('taxExemptTo')"><i class="fa fa-calendar"></i></button>
+                    </span>
+                </div>
+                <input-error error="branchform.taxExemptTo.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.taxExemptIssuedBy.$invalid}">
+                <label class="control-label" for="taxExemptIssuedBy">Tax Exempt Certificate Issued By</label>
+                <select class="form-control" ng-model="$ctrl.Branch.taxExemptIssuedBy" ng-options="tax.TaxExemptionCertificateIssuedBy_Id as tax.Description for tax in $ctrl.textExemptIssuedByList"></select>
+                <input-error error="branchform.taxExemptIssuedBy.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" ng-class="{'has-error' : branchform.TIN.$invalid}">
+                <label class="control-label" for="TIN">Tax Identification Number (TIN)</label>
+                <input class="form-control" type="text" id="TIN" name="TIN" ng-model="$ctrl.Branch.TIN" />
+                <input-error error="branchform.TIN.$error"></input-error>
+            </div>
+            <div class="col-md-8">
+                <div class="col-md-12 row" ng-class="{'has-error' : branchform.taxType.$invalid}">
+                    <label class="control-label" for="taxType">Tax Type (Please Select)</label>
+                </div>
+                <div class="col-md-6 row">
+                    <label class="control-label" for="sp"><input type="checkbox" name="sp" ng-model="$ctrl.Branch.isSingleProp" /> Single Proprietorship (WI 156)</label>
+                    <div class="col-md-12" ng-class="{'has-error' : branchform.DTIBusinessRegDate.$invalid}">
+                        <label class="control-label" for="DTIBusinessRegDate">DTI Business Registration Date (mm/dd/yyyy)</label>
+                        <div class="input-group">
+                            <input class="form-control" type="text" uib-datepicker-popup="{{$ctrl.format}}" datepicker-options="$ctrl.dateOptions" id="DTIBusinessRegDate" is-open="$ctrl.datepickerObj.DTIBusinessRegDate" name="DTIBusinessRegDate" ng-model="$ctrl.Branch.DTIBusinessRegDate" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.toggleDatepicker('DTIBusinessRegDate')"><i class="fa fa-calendar"></i></button>
+                            </span>
+                        </div>
+                        <input-error error="branchform.DTIBusinessRegDate.$error"></input-error>
+                    </div>
+                </div>
+                <div class="col-md-6 row">
+                    <label class="control-label" for="pc"><input type="checkbox" name="pc" ng-model="$ctrl.Branch.isPartnershipCorp" /> Partnership / Corporation</label>
+                    <div class="col-md-12" ng-class="{'has-error' : branchform.SECRegDate.$invalid}">
+                        <label class="control-label" for="SECRegDate">SEC Registration Date (mm/dd/yyyy)</label>
+                        <div class="input-group">
+                            <input class="form-control" type="text" uib-datepicker-popup="{{$ctrl.format}}" datepicker-options="$ctrl.dateOptions" id="SECRegDate" is-open="$ctrl.datepickerObj.SECRegDate" name="SECRegDate" ng-model="$ctrl.Branch.SECRegDate" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.toggleDatepicker('SECRegDate')"><i class="fa fa-calendar"></i></button>
+                            </span>
+                        </div>
+                        <input-error error="branchform.SECRegDate.$error"></input-error>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" ng-class="{'has-error' : branchform.principalOwner.$invalid}">
+                <label class="control-label" for="principalOwner">Name of Principal Owner</label>
+                <input class="form-control" type="text" id="principalOwner" name="principalOwner" ng-model="$ctrl.Branch.principalName1" />
+                <input-error error="branchform.principalOwner.$error"></input-error>
+            </div>
+            <div class="col-md-12" ng-class="{'has-error' : branchform.companySignatory.$invalid}">
+                <label class="control-label" for="companySignatory">Name of Company Signatory/ies</label>
+                <input class="form-control" type="text" id="principalName2" name="principalName2" ng-model="$ctrl.Branch.principalName2" />
+                <input class="form-control" type="text" id="companySignatory" name="principalName3" ng-model="$ctrl.Branch.principalName3" />
+                <input class="form-control" type="text" id="principalName4" name="principalName4" ng-model="$ctrl.Branch.principalName4" />
+                <input class="form-control" type="text" id="principalName5" name="principalName5" ng-model="$ctrl.Branch.principalName5" />
+                <input-error error="branchform.companySignatory.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" ng-class="{'has-error' : branchform.mailingAddress1.$invalid}">
+                <label class="control-label" for="mailingAddress">Special / Mailing Address - For Centralized Delivery of CWT (Department, Floor &amp; Building Name, Street, District / City, Province, Country, Zip Code)</label>
+                <input class="form-control" type="text" id="mailingAddress1" name="mailingAddress1" ng-model="$ctrl.Branch.mailingAddress1" />
+                <input class="form-control" type="text" id="mailingAddress2" name="mailingAddress2" ng-model="$ctrl.Branch.mailingAddress2" />
+                <input class="form-control" type="text" id="mailingAddress3" name="mailingAddress3" ng-model="$ctrl.Branch.mailingAddress3" />
+                <input class="form-control" type="text" id="mailingAddress4" name="mailingAddress4" ng-model="$ctrl.Branch.mailingAddress4" />
+                <input-error error="branchform.mailingAddress1.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" ng-class="{'has-error' : branchform.mailingCity.$invalid}">
+                <label class="control-label">City</label>
+                <select class="form-control" name="mailingCity" ng-model="$ctrl.Branch.mailingCity" ng-options="city.City_Id as city.Description for city in $ctrl.cityList">
+                    <option value="0" selected>Select City</option>
+                </select>
+                <input-error error="branchform.mailingCity.$error"></input-error>
+            </div>
+            <div class="col-md-6" ng-class="{'has-error' : branchform.mailingAddressZipCode.$invalid}">
+                <label class="control-label">ZipCode</label>
+                <select class="form-control" name="mailingAddressZipCode" ng-model="$ctrl.Branch.mailingAddressZipCode" ng-options="zipCode.ZipCode_Id as zipCode.Description for zipCode in $ctrl.zipCodeList">
+                    <option value="0" selected>Select Zipcode</option>
+                </select>
+                <input-error error="branchform.mailingAddressZipCode.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" ng-class="{'has-error' : branchform.withAcquirer.$invalid}">
+                <label><input type="checkbox" name="withAcquirer" ng-model="$ctrl.Branch.withAcquirer" /> With Existing Acquirer?</label>
+                <input-error error="branchform.withAcquirer.$error"></input-error>
+            </div>
+            <div class="col-md-8" ng-class="{'has-error' : branchform.acquirerInstitutionName.$invalid}">
+                <label class="control-label" for="acquirerInstitutionName">Name of Institution</label>
+                <input class="form-control" type="text" id="acquirerInstitutionName" name="acquirerInstitutionName" ng-model="$ctrl.Branch.acquirerInstitutionName" />
+                <input-error error="branchform.acquirerInstitutionName.$error"></input-error>
+            </div>
+        </div>
+
+        <div class="row clearfix-custom">
+            <div class="form-header clearfix-custom">
+                <p class="header-title">
+                    Storage of Card Holder Information
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" ng-class="{'has-error' : branchform.withECR.$invalid}">
+                <label class="control-label" for="withECR"><input type="checkbox" name="withECR" ng-model="$ctrl.Branch.withECR" /> With Installed Electronic Cash Register (ECR)</label>
+                <input-error error="branchform.withECR.$error"></input-error>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-12 row" ng-class="{'has-error' : branchform.serviceProvider.$invalid}">
+                    <label class="control-label col-md-3" for="serviceProvider">Service Provider</label>
+                    <div class="col-md-9 row">
+                        <input class="form-control" type="text" id="serviceProvider" name="serviceProvider" ng-disabled="$ctrl.Branch.withEcr" ng-model="$ctrl.Branch.serviceProvider" />
+                        <small class="text-muted">IF WITH INSTALLED ECR</small>
+                        <input-error error="branchform.serviceProvider.$error"></input-error>
+                    </div>
+                </div>
+                <div class="col-md-12 row" ng-class="{'has-error' : branchform.ecrForInstallation.$invalid}">
+                    <label class="control-label" for="ecrForInstallation"><input type="checkbox" id="ecrForInstallation" ng-if="!$ctrl.Branch.withEcr" name="ecrForInstallation" ng-model="$ctrl.Branch.ecrForInstallation" /> For Installation</label>
+                    <div class="col-md-12 row">
+                        <small class="text-muted">IF WITHOUT INSTALLED ECR</small>
+                    </div>
+                    <input-error error="branchform.ecrForInstallation.$error"></input-error>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" ng-class="{'has-error' : branchform.isSwipingCardWithInstalledECR.$invalid}">
+                <label class="control-label" for=""><input type="checkbox" name="isSwipingCardWithInstalledECR" ng-disabled="$ctrl.Branch.withEcr" ng-model="$ctrl.Branch.isSwipingCardWithInstalledECR" /> Do you store card data by swiping the card to your ECR or similar equipment other than the BDO-issued POS terminal?</label>
+                <div class="col-md-12 row">
+                    <small class="text-muted">IF WITH INSTALLED ECR</small>
+                </div>
+                <input-error error="branchform.isSwipingCardWithInstalledECR.$error"></input-error>
+            </div>
+            <div class="col-md-6" ng-class="{'has-error' : branchform.cardHolderDataTobeStored1.$invalid}">
+                <label class="control-label" for="cardHolderDataTobeStored1">Please indicate the Cardholder Data stored</label>
+                <input class="form-control" type="text" id="cardHolderDataTobeStored1" name="cardHolderDataTobeStored1" ng-model="$ctrl.Branch.cardHolderDataTobeStored" />
+                <div class="col-md-12 row">
+                    <small class="text-muted">WHEN YOU STORE DATA BY SWIPING</small>
+                </div>
+                <input-error error="branchform.cardHolderDataTobeStored1.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" ng-class="{'has-error' : branchform.isSwipingCardWithoutInstalledECR.$invalid}">
+                <label class="control-label" for=""><input type="checkbox" name="isSwipingCardWithoutInstalledECR" ng-disabled="$ctrl.Branch.ecrForInstallation" ng-model="$ctrl.Branch.isSwipingCardWithoutInstalledECR" /> Do you store card data by swiping the card to your ECR or similar equipment other than the BDO-issued POS terminal?</label>
+                <div class="col-md-12 row">
+                    <small class="text-muted">IF FOR INSTALLATION</small>
+                </div>
+                <input-error error="branchform.isSwipingCardWithoutInstalledECR.$error"></input-error>
+            </div>
+            <div class="col-md-6" ng-class="{'has-error' : branchform.cardHolderDataTobeStored2.$invalid}">
+                <label class="control-label" for="cardHolderDataTobeStored2">Please indicate the Cardholder Data to be stored</label>
+                <input class="form-control" type="text" id="cardHolderDataTobeStored2" name="cardHolderDataTobeStored2" ng-model="$ctrl.Branch.cardHolderDataTobeStored" />
+                <small class="text-muted">WHEN YOU STORE DATA BY SWIPING</small>
+                <input-error error="branchform.cardHolderDataTobeStored2.$error"></input-error>
+            </div>
+        </div>
+        <div class="row clearfix-custom">
+            <div class="form-header clearfix-custom">
+                <p class="header-title">
+                    Debit Facility Instructions
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" ng-class="{'has-error' : branchform.debitSettlementAcctNo.$invalid}">
+                <label class="control-label" for="debitSettlementAcctNo">Settlement Account Number (For Credit Payment)</label>
+                <input class="form-control" type="text" id="debitSettlementAcctNo" name="debitSettlementAcctNo" ng-model="$ctrl.Branch.debitSettlementAcctNo" />
+                <input-error error="branchform.debitSettlementAcctNo.$error"></input-error>
+            </div>
+            <div class="col-md-4" ng-class="{'has-error' : branchform.payeesName.$invalid}">
+                <label class="control-label" for="payeesName">Payees Name (if Check Payment)</label>
+                <input class="form-control" type="text" id="payeesName" name="payeesName" ng-model="$ctrl.Branch.payeesName" />
+                <input-error error="branchform.payeesName.$error"></input-error>
+            </div>
+            <div class="col-md-4" ng-class="{'has-error' : branchform.emailAddressForReport.$invalid}">
+                <label class="control-label" for="emailAddressForReport">E-Mail Address for Report Distribution</label>
+                <input class="form-control" type="text" id="emailAddressForReport" name="emailAddressForReport" ng-model="$ctrl.Branch.emailAddressForReport" />
+                <input-error error="branchform.emailAddressForReport.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label class="control-label" for="debitMailingAddress">Mailing Address - For Payment Delivery and Other Reports (Department, Floor &amp; Building Name, Street, District / City, Province, Country, Zip Code)</label>
+            </div>
+            <div class="col-md-6">
+                <label class="control-label" for="debitMailingAddressCity">City</label>
+                <select class="form-control" ng-model="$ctrl.Branch.debitMailingAddressCity" ng-options="city.City_Id as city.Description for city in $ctrl.cityList"></select>
+                <input-error error="branchform.debitMailingAddress.$error"></input-error>
+            </div>
+            <div class="col-md-6">
+                <label class="control-label" for="debitMailingAddressZipCode">Zip Code</label>
+                <select class="form-control" ng-model="$ctrl.Branch.debitMailingAddressZipCode" ng-options="zipCode.ZipCode_Id as zipCode.Description for zipCode in $ctrl.zipCodeList"></select>
+                <input-error error="branchform.debitMailingAddressZipCode.$error"></input-error>
+            </div>
+        </div>
+
+        <div class="row clearfix-custom">
+            <div class="form-header clearfix-custom">
+                <p class="header-title">
+                    Cash Agad Facility
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" ng-class="{'has-error' : branchform.SOARecipients.$invalid}">
+                <label class="control-label" for="SOARecipients">Name of Authorized SOA Recipient/s</label>
+                <input class="form-control" type="text" id="SOARecipients" name="SOARecipients" ng-model="$ctrl.Branch.SOARecipients" />
+                <input-error error="branchform.SOARecipients.$error"></input-error>
+            </div>
+            <div class="col-md-4" ng-class="{'has-error' : branchform.SOAEmailAddress.$invalid}">
+                <label class="control-label" for="SOAEmailAddress">E-Mail Adress</label>
+                <input class="form-control" type="text" id="SOAEmailAddress" name="SOAEmailAddress" ng-model="$ctrl.Branch.SOAEmailAddress" />
+                <input-error error="branchform.SOAEmailAddress.$error"></input-error>
+            </div>
+            <div class="col-md-4" ng-class="{'has-error' : branchform.reportDistributionperCompany.$invalid}">
+                <label class="control-label" for="">Report Distribution</label>
+                <div class="col-md-12">
+                    <label><input type="checkbox" name="reportDistributionperCompany" ng-model="$ctrl.Branch.reportDistributionperCompany" /> Per Company</label>
+                </div>
+                <input-error error="branchform.reportDistributionperCompany.$error"></input-error>
+            </div>
+        </div>
+        <div class="row clearfix-custom">
+            <div class="form-header clearfix-custom">
+                <p class="header-title">
+                    Principal Details (Required for Single Proprietorship)
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" ng-class="{'has-error' : branchform.principalLastName.$invalid}">
+                <label class="control-label" for="principalLastName">Last Name</label>
+                <input class="form-control" type="text" id="principalLastName" name="principalLastName" ng-model="$ctrl.Branch.principalLastName" />
+                <input-error error="branchform.principalLastName.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.reportDistribution.$invalid}">
+                <label class="control-label" for="principalFirstName">First Name</label>
+                <input class="form-control" type="text" id="principalFirstName" name="principalFirstName" ng-model="$ctrl.Branch.principalFirstName" />
+                <input-error error="branchform.principalFirstName.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.principalMiddleName.$invalid}">
+                <label class="control-label" for="principalMiddleName">Middle Name</label>
+                <input class="form-control" type="text" id="principalMiddleName" name="principalMiddleName" ng-model="$ctrl.Branch.principalMiddleName" />
+                <input-error error="branchform.principalMiddleName.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.principalPhoneNo.$invalid}">
+                <label class="control-label" for="principalPhoneNo">Residence Phone Number</label>
+                <input class="form-control" type="text" id="principalPhoneNo" name="principalPhoneNo" ng-model="$ctrl.Branch.principalPhoneNo" />
+                <input-error error="branchform.principalPhoneNo.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" ng-class="{'has-error' : branchform.principalDateOfBirth.$invalid}">
+                <label class="control-label" for="principalDateOfBirth">Date of Birth (mm/dd/yyyy)</label>
+                <div class="input-group">
+                    <input class="form-control" type="text" uib-datepicker-popup="{{$ctrl.format}}" datepicker-options="$ctrl.dateOptions" id="principalDateOfBirth" is-open="$ctrl.datepickerObj.principalDateOfBirth" name="principalDateOfBirth" ng-model="$ctrl.Branch.principalDateOfBirth" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.toggleDatepicker('principalDateOfBirth')"><i class="fa fa-calendar"></i></button>
+                    </span>
+                </div>
+                <input-error error="branchform.principalDateOfBirth.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.principalCivilStatus.$invalid}">
+                <label class="control-label" for="principalCivilStatus">Civil Status</label>
+                <select class="form-control" name="principalCivilStatus" ng-model="$ctrl.Branch.principalCivilStatus" ng-options="cs.CivilStatus_Id as cs.Description for cs in $ctrl.civilStatusList">
+                    <option value="0" selected>Select Civil Status</option>
+                </select>
+                <input-error error="branchform.principalCivilStatus.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.principalFbName.$invalid}">
+                <label class="control-label" for="principalFbName">Facebook Profile Name</label>
+                <input class="form-control" type="text" id="principalFbName" name="principalFbName" ng-model="$ctrl.Branch.principalFbName" />
+                <input-error error="branchform.principalFbName.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.principalHomeOwnership.$invalid}">
+                <label class="control-label" for="principalHomeOwnership">Home Ownership</label>
+                <select class="form-control" name="principalHomeOwnership" ng-model="$ctrl.Branch.principalHomeOwnership" ng-options="ho.HomeOwnership_Id as ho.Description for ho in $ctrl.homeOwnershipList">
+                    <option value="0" selected>Select Home Ownership</option>
+                </select>
+                <input-error error="branchform.principalHomeOwnership.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" ng-class="{'has-error' : branchform.principalPermanentAddress.$invalid}">
+                <label class="control-label" for="principalPermanentAddress">Permanent Residence Address (House No. &amp; Street, Barangay, District / City, Province, Country, Zip Code)</label>
+                <input class="form-control" type="text" id="principalPermanentAddress" name="principalPermanentAddress" ng-model="$ctrl.Branch.principalPermanentAddress" />
+                <input-error error="branchform.principalPermanentAddress.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" ng-class="{'has-error' : branchform.principalCity.$invalid}">
+                <label class="control-label" for="principalCity">City</label>
+                <select class="form-control" name="principalCity" ng-model="$ctrl.Branch.principalCity" ng-options="city.City_Id as city.Description for city in $ctrl.cityList">
+                    <option>1</option>
+                </select>
+                <input-error error="branchform.principalCity.$error"></input-error>
+            </div>
+            <div class="col-md-6" ng-class="{'has-error' : branchform.principalZipCode.$invalid}">
+                <label class="control-label" for="principalZipCode">ZipCode</label>
+                <select class="form-control" name="principalZipCode" ng-model="$ctrl.Branch.principalZipCode" ng-options="zipCode.ZipCode_Id as zipCode.Description for zipCode in $ctrl.zipCodeList">
+                    <option>1</option>
+                </select>
+                <input-error error="branchform.principalZipCode.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <h5 class="col-md-12 subheader-custom">SPOUSE'S NAME</h5>
+        </div>
+        <div class="row">
+            <div class="col-md-3" ng-class="{'has-error' : branchform.spouseLastName.$invalid}">
+                <label class="control-label" for="spouseLastName">Last Name</label>
+                <input class="form-control" type="text" id="spouseLastName" name="spouseLastName" ng-model="$ctrl.Branch.spouseLastName" />
+                <input-error error="branchform.spouseLastName.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.spouseFirstName.$invalid}">
+                <label class="control-label" for="spouseFirstName">First Name</label>
+                <input class="form-control" type="text" id="spouseFirstName" name="spouseFirstName" ng-model="$ctrl.Branch.spouseFirstName" />
+                <input-error error="branchform.spouseFirstName.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.spouseMiddleName.$invalid}">
+                <label class="control-label" for="spouseMiddleName">Middle Name</label>
+                <input class="form-control" type="text" id="spouseMiddleName" name="spouseMiddleName" ng-model="$ctrl.Branch.spouseMiddleName" />
+                <input-error error="branchform.spouseMiddleName.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.spousePhoneNo.$invalid}">
+                <label class="control-label" for="spousePhoneNo">Phone Number</label>
+                <input class="form-control" type="text" id="spousePhoneNo" name="spousePhoneNo" ng-model="$ctrl.Branch.spousePhoneNo" />
+                <input-error error="branchform.spousePhoneNo.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" ng-class="{'has-error' : branchform.spouseAddress.$invalid}">
+                <label class="control-label" for="spouseAddress">Spouse's Complete Address (House No. &amp; Street, Barangay, District / City, Province, Country, Zip Code)</label>
+                <input class="form-control" type="text" id="spouseAddress" name="spouseAddress" ng-model="$ctrl.Branch.spouseAddress" />
+                <input-error error="branchform.spouseAddress.$error"></input-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" ng-class="{'has-error' : branchform.spouseCity.$invalid}">
+                <label class="control-label" for="spouseCity">City</label>
+                <select class="form-control" name="spouseCity" ng-model="$ctrl.Branch.spouseCity" ng-options="city.City_Id as city.Description for city in $ctrl.cityList">
+                    <option>1</option>
+                </select>
+                <input-error error="branchform.spouseCity.$error"></input-error>
+            </div>
+            <div class="col-md-6" ng-class="{'has-error' : branchform.spouseZipCode.$invalid}">
+                <label class="control-label" for="spouseZipCode">ZipCode</label>
+                <select class="form-control" name="spouseZipCode" ng-model="$ctrl.Branch.spouseZipCode" ng-options="zipCode.ZipCode_Id as zipCode.Description for zipCode in $ctrl.zipCodeList">
+                    <option>1</option>
+                </select>
+                <input-error error="branchform.spouseZipCode.$error"></input-error>
+            </div>
+        </div>
+        <div class="row clearfix-custom">
+            <div class="form-header">
+                <p class="header-title">
+                    Brank / Credit Preferences
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" ng-class="{'has-error' : branchform.financialInstitution.$invalid}">
+                <label class="control-label" for="financialInstitution">Name of Financial Institution and Branch</label>
+                <input class="form-control" type="text" id="financialInstitution" name="financialInstitution" ng-model="$ctrl.Branch.financialInstitution" />
+                <input-error error="branchform.financialInstitution.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.accountFacility.$invalid}">
+                <label class="control-label" for="accountFacility">Type of Account and/or Credit Facility</label>
+                <input class="form-control" type="text" id="accountFacility" name="accountFacility" ng-model="$ctrl.Branch.accountFacility" />
+                <input-error error="branchform.accountFacility.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.acctLoanNo.$invalid}">
+                <label class="control-label" for="acctLoanNo">Account or Loan Number</label>
+                <input class="form-control" type="text" id="acctLoanNo" name="acctLoanNo" ng-model="$ctrl.Branch.acctLoanNo" />
+                <input-error error="branchform.acctLoanNo.$error"></input-error>
+            </div>
+            <div class="col-md-3" ng-class="{'has-error' : branchform.loanTerm.$invalid}">
+                <label class="control-label" for="loanTerm">Loan Amount / Term</label>
+                <input class="form-control" type="text" id="loanTerm" name="loanTerm" ng-model="$ctrl.Branch.loanTerm" />
+                <input-error error="branchform.loanTerm.$error"></input-error>
+            </div>
+        </div>
+        <div class="row clearfix-custom">
+            <div class="form-header">
+                <p class="header-title">
+                    Trade References
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" ng-class="{'has-error' : branchform.tradeCustomerName.$invalid}">
+                <label class="control-label" for="tradeCustomerName">Name of Customer / Supplier</label>
+                <input class="form-control" type="text" id="tradeCustomerName" name="tradeCustomerName" ng-model="$ctrl.Branch.tradeCustomerName" />
+                <input-error error="branchform.tradeCustomerName.$error"></input-error>
+            </div>
+            <div class="col-md-6" ng-class="{'has-error' : branchform.tradeContactNo.$invalid}">
+                <label class="control-label" for="tradeContactNo">Contact Number</label>
+                <input class="form-control" type="text" id="tradeContactNo" name="tradeContactNo" ng-model="$ctrl.Branch.tradeContactNo" />
+                <input-error error="branchform.tradeContactNo.$error"></input-error>
+            </div>
+        </div>
+        <div class="row clearfix-custom">
+            <div class="form-header">
+                <p class="header-title">
+
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group" ng-class="{'has-error': branchform.noOfPos.$invalid}">
+                    <label for="noOfPos">POS Terminal</label>
+                    <input type="text" name="noOfPos" class="form-control" id="noOfPos" ng-required="true" placeholder="POS Terminal" ng-model="$ctrl.Branch.noOfPos">
+                    <input-error error="branchform.noOfPos.$error"></input-error>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="discountDebitRate">Merchant Debit Rate For Debit Cards</label>
+                    <input type="text" class="form-control" id="discountDebitRate" ng-model="$ctrl.Branch.discountDebitRate" placeholder="Debit Rate">
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="debitMerchantNo">Merchant Number</label>
+                    <input type="text" class="form-control" id="debitMerchantNo" ng-model="$ctrl.Branch.debitMerchantNo" placeholder="Merchant Number">
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="storeId">Store Id</label>
+                    <input type="text" class="form-control" id="storeId" ng-model="$ctrl.Branch.storeId" placeholder="Store Id">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h5 class="col-md-12 subheader-custom">CREDIT FACILITY INSTRUCTION</h5>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" ng-model="$ctrl.Branch.reportPerBranch" value="" checked="">
+                        Report Per Branch
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label class="control-label">SendBdo030114</label>
+                <select class="form-control" ng-model="$ctrl.Branch.sendBdo030114" ng-options="sb.Id as sb.Description for sb in $ctrl.sendBdoList"></select>
+            </div>
+            <div class="col-md-2">
+                <label for="ftpDir">FTP Directory</label>
+                <input type="text" class="form-control" id="ftpDir" ng-model="$ctrl.Branch.ftpDir" placeholder="FTP Directory">
+            </div>
+            <div class="col-md-2">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" ng-model="$ctrl.Branch.genPayment" value="" checked="">
+                        Generate Payment
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" ng-model="$ctrl.Branch.computeCWT" value="" checked="">
+                        Compute for Monthly CWT
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" ng-model="$ctrl.Branch.settlementPerBranch" value="" checked="">
+                        Settlement Per Branch
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="customerNo">Customer Number</label>
+                    <input type="text" class="form-control" id="customerNo" ng-model="$ctrl.Branch.customerNo" placeholder="Customer Number">
+                </div>
+            </div>
+            <div class="col-md-2">
+
+                <div class="form-group">
+                    <label for="mrechantGrade">Merchant Grade</label>
+                    <input type="text" class="form-control" id="customerNo" ng-model="$ctrl.Branch.merchantGrade" placeholder="Merchant Grade">
+                </div>
+
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="amexRating">AMEX Rating</label>
+                    <input type="text" class="form-control" id="amexRating" ng-model="$ctrl.Branch.amexRating" placeholder="AMEX Rating">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="bdoPayRating">BDO Pay Rating</label>
+                    <input type="text" class="form-control" id="bdoPayRating" ng-model="$ctrl.Branch.bdoPayRating" placeholder="BDO Pay Rating">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="bdoPaySegment">BDO Pay Segment</label>
+                    <input type="text" class="form-control" id="bdoPaySegment" ng-model="$ctrl.Branch.bdoPaySegment" placeholder="BDO Pay Segment">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="mcc">MCC</label>
+                    <select class="form-control" ng-model="$ctrl.Branch.MCC_Id" ng-options="mcc.MCC_Id as mcc.Description for mcc in $ctrl.mccList"></select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="cardPlans">Card Plans</label>
+                    <select class="form-control" ng-model="$ctrl.Branch.cardPlan" ng-options="cp.CardPlans_Id as cp.Description for cp in $ctrl.cardPlansList"></select>
+                </div>
+            </div>
+            <div class="col-md-2">
+
+                <div class="form-group">
+                    <label for="aoCode">BDM or Agent(AE Code)</label>
+                    <input type="text" class="form-control" id="mcc" ng-model="$ctrl.Branch.aoCode" placeholder="BDM or Agent(AE Code)">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="feeAccount">Fee Account (TPP Only)</label>
+                    <input type="text" class="form-control" id="feeAccount" ng-model="$ctrl.Branch.feeAccount" placeholder="BDM or Agent(AE Code)">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="cardPlans">For Moto</label>
+                    <select class="form-control" ng-model="$ctrl.Branch.forMoto" ng-options="moto.Id as moto.Description for moto in $ctrl.motoList"></select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="strategicMerchant">Strategic Merchant</label>
+                    <input type="text" class="form-control" id="strategicMerchant" ng-model="$ctrl.Branch.strategicMerchant" placeholder="Strategic Merchant">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="tranSource">Default Transaction Source</label>
+                    <input type="text" class="form-control" id="tranSource" ng-model="$ctrl.Branch.tranSource" placeholder="Default Transaction Source">
+
+                    <small class="form-text text-muted">(For e-Commerce/Moto/RPS)</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="mcId">MC Assigned Id</label>
+                    <input type="text" class="form-control" id="mcc" ng-model="$ctrl.Branch.mcId" placeholder="MC Assigned Id">
+                    <small class="form-text text-muted">(For SM Department Store)</small>
+                </div>
+
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="areaMallCode">Area Mall Code</label>
+                    <select class="form-control" ng-model="$ctrl.Branch.areaMallCode" ng-options="amc.AreaMallCode_Id as amc.Description for amc in $ctrl.areaMallCodeList">
+                        <option selected="" value="1">Area Mall Code 1</option>
+                        <option value="2">Area Mall Code 2</option>
+                        <option value="3">Area Mall Code 3</option>
+
+                    </select>
+                </div>
+
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="imprinterPlateName">Imprinter Name</label>
+                    <input type="text" class="form-control" id="imprinterPlateName" ng-model="$ctrl.Branch.imprinterPlateName" placeholder="Imprinter Name">
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="imprinterPlateNumbers">Imprinter Number</label>
+                    <input type="text" class="form-control" id="imprinterPlateNumbers" ng-model="$ctrl.Branch.imprinterPlateNumbers" placeholder="Imprinter Number">
+                    <small class="form-text text-muted">(Sales Slip Handling)</small>
+                </div>
+
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="imprinterAMEX">Imprinter AMEX</label>
+                    <input type="text" class="form-control" id="imprinterAMEX" ng-model="$ctrl.Branch.imprinterAMEX" placeholder="Imprinter AMEX">
+                    <small class="form-text text-muted">(MID Caping)</small>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="imprinterDC">Imprinter DC</label>
+                    <input type="text" class="form-control" id="imprinterDC" ng-model="$ctrl.Branch.imprinterDC" placeholder="Imprinter DC">
+                    <small class="form-text text-muted">(Top Corporation/eCom)</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="imprinterJCB">Imprinter JCB</label>
+                    <input type="text" class="form-control" id="imprinterJCB" ng-model="$ctrl.Branch.imprinterJCB" placeholder="Imprinter JCB">
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="imprinterOthers">Imprinter Others</label>
+                    <input type="text" class="form-control" id="imprinterOthers" ng-model="$ctrl.Branch.imprinterOthers" placeholder="Imprinter Others">
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="imprinterTotal">Total Number Of Manual Imprinters</label>
+                    <input type="text" class="form-control" id="imprinterTotal" ng-model="$ctrl.Branch.imprinterTotal" placeholder="Total Number Of Manual Imprinters">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="holdOutAcctNo">Hold-out Account Number</label>
+                    <input type="text" class="form-control" id="holdOutAcctNo" ng-model="$ctrl.Branch.holdOutAcctNo" placeholder="Hold-out Account Number">
+                    <small class="form-text text-muted">(If applicable)</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="holdOutAmount">Hold-out Amount</label>
+                    <input type="text" class="form-control" id="holdOutAmount" ng-model="$ctrl.Branch.holdOutAmount" placeholder="Hold-out Amount">
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="payDelayDays">Pay Delay Days</label>
+                    <input type="text" class="form-control" id="payDelayDays" ng-model="$ctrl.Branch.payDelayDays" placeholder="Pay Delay Days">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="remarks">Remarks</label>
+                    <textarea class="form-control" id="remarks" ng-model="$ctrl.Branch.remarks" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix-custom">
+            <div class="form-header">
+                <p class="header-title">
+                    FOR MERCHANT PARTNERSHIP SALES ONLY
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="preparedBy">Prepare By</label>
+                    <input type="text" class="form-control" id="preparedBy" ng-model="$ctrl.Branch.preparedBy" placeholder="Prepare By" />
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="preparedDate">Date</label>
+                    <div class="input-group">
+                        <input type="text" uib-datepicker-popup="{{$ctrl.format}}" datepicker-options="$ctrl.dateOptions" class="form-control" id="preparedDate" is-open="$ctrl.datepickerObj.preparedDate" name="preparedDate" ng-model="$ctrl.Branch.preparedDate" placeholder="Date" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.toggleDatepicker('preparedDate')"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="notedBy">Noted by</label>
+                    <input type="text" class="form-control" id="notedBy" ng-model="$ctrl.Branch.notedBy" placeholder="Noted by" />
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="notedDate">Date</label>
+                    <div class="input-group">
+                        <input type="text" uib-datepicker-popup="{{$ctrl.format}}" datepicker-options="$ctrl.dateOptions" class="form-control" id="notedDate" name="notedDate" is-open="$ctrl.datepickerObj.notedDate" ng-model="$ctrl.Branch.notedDate" placeholder="Noted Date" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.toggleDatepicker('notedDate')"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix-custom">
+            <div class="form-header">
+                <p class="header-title">
+                    FOR MERCHANT MANAGEMENT USE ONLY
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="controlNo">Control Number</label>
+                    <input type="text" class="form-control" id="controlNo" ng-model="$ctrl.Branch.controlNo" placeholder="Control Number" />
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" ng-model="$ctrl.Branch.smsSending" value="" checked="">
+                        SMS Sending
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" ng-model="$ctrl.Branch.withDependency" value="" checked="">
+                        With Dependency
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" ng-model="$ctrl.Branch.custr" value="" checked="">
+                        CUSTR
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" ng-model="$ctrl.Branch.postMaintReview" value="" checked="">
+                        Done Post Maint Review
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="postMaintReviewDate">Date</label>
+                    <div class="input-group">
+                        <input type="text" uib-datepicker-popup="{{$ctrl.format}}" datepicker-options="$ctrl.dateOptions" class="form-control" id="postMaintReviewDate" is-open="$ctrl.datepickerObj.postMaintReviewDate" name="postMaintReviewDate" ng-model="$ctrl.Branch.postMaintReviewDate" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.toggleDatepicker('postMaintReviewDate')"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="currentDate">Current Date</label>
+                    <div class="input-group">
+                        <input type="text" uib-datepicker-popup="{{$ctrl.format}}" datepicker-options="$ctrl.dateOptions" class="form-control" id="currentDate" is-open="$ctrl.datepickerObj.currentDate" name="currentDate" ng-model="$ctrl.Branch.currentDate" placeholder="" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.toggleDatepicker('currentDate')"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="midCount">MID Count</label>
+                    <input type="text" class="form-control" id="midCount" ng-model="$ctrl.Branch.midCount" placeholder="" />
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="controlNo">MID Date Time Created</label>
+                    <div class="input-group">
+                        <input type="text" uib-datepicker-popup="{{$ctrl.format}}" datepicker-options="$ctrl.dateOptions" class="form-control" id="MIDDateTimeCreated" is-open="$ctrl.datepickerObj.MIDDateTimeCreated" name="MIDDateTimeCreated" ng-model="$ctrl.Branch.MIDDateTimeCreated" placeholder="" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.toggleDatepicker('MIDDateTimeCreated')"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="tidCount">TID Count/PMMU</label>
+                    <input type="text" class="form-control" id="tidCount" ng-model="$ctrl.Branch.tidCount" placeholder="" />
+
+                </div>
+            </div>
+            <div class="col-md-2">
+
+                <div class="form-group">
+                    <label for="tidCount">TID Date Time Created</label>
+                    <div class="input-group">
+                        <input type="text" uib-datepicker-popup="{{$ctrl.format}}" datepicker-options="$ctrl.dateOptions" class="form-control" id="tidDateTimeCreated" is-open="$ctrl.datepickerObj.tidDateTimeCreated" name="tidDateTimeCreated" ng-model="$ctrl.Branch.tidDateTimeCreated" placeholder="" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.toggleDatepicker('tidDateTimeCreated')"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="mdf">MDF</label>
+                    <input type="text" class="form-control" id="mdf" ng-model="$ctrl.Branch.mdf" placeholder="" />
+
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="mdfMaker">MDF Maker</label>
+                    <input type="text" class="form-control" id="mdfMaker" ng-model="$ctrl.Branch.mdfMaker" placeholder="" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="mdfDateTimeCreated">MDF Date Time Created</label>
+                    <div class="input-group">
+                        <input type="text" uib-datepicker-popup="{{$ctrl.format}}" datepicker-options="$ctrl.dateOptions" class="form-control" id="mdfDateTimeCreated" is-open="$ctrl.datepickerObj.mdfDateTimeCreated" name="mdfDateTimeCreated" ng-model="$ctrl.Branch.mdfDateTimeCreated" placeholder="" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.toggleDatepicker('mdfDateTimeCreated')"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="mdfChecker">MDF Checker</label>
+                    <input type="text" class="form-control" id="mdfChecker" ng-model="$ctrl.Branch.mdfChecker" placeholder="" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="mdfDateTimeChecked">MDF Date Time Checked</label>
+                    <div class="input-group">
+                        <input type="text" uib-datepicker-popup="{{$ctrl.format}}" datepicker-options="$ctrl.mdfDateTimeChecked" class="form-control" id="mdfDateTimeChecked" is-open="$ctrl.datepickerObj.mdfDateTimeChecked" name="mdfDateTimeChecked" ng-model="$ctrl.Branch.mdfDateTimeChecked" placeholder="" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.toggleDatepicker('mdfDateTimeChecked')"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-right margin-top-20px" ng-if="$ctrl.showAction">
+            <button type="button" ng-if="$ctrl.Branch.Id == undefined" ng-disabled="branchform.$invalid" class="btn btn-sm btn-primary" style="margin-bottom:3px;" ng-click="$ctrl.createBranch()"><i class="fa fa-floppy-o"></i> Save</button>
+            <button type="button" ng-if="$ctrl.Branch.Id != undefined" ng-disabled="branchform.$invalid || !branchform.$dirty" class="btn btn-sm btn-primary" style="margin-bottom:3px;" ng-click="$ctrl.updateBranch()"><i class="fa fa-floppy-o"></i> Update</button>
+        </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>

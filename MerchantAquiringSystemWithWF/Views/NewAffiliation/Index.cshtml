@@ -1,0 +1,146 @@
+﻿@model IEnumerable<MerchantAquiringSystemWithWF.Models.RequestViewModel>
+
+@{
+    ViewBag.Title = "Request";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //string routeView =(string) ViewBag.view;
+}
+
+
+@*<script src="~/Views/NewAffiliation/AO/Create.component.js"></script>
+<script src="~/Views/NewAffiliation/AO/Index.component.js"></script>
+<script src="~/Views/NewAffiliation/newaffiliation.service.js"></script>
+<script src="~/Views/NewAffiliation/newaffiliation.route.js"></script>*@
+@Scripts.Render("~/bundles/NewAffiliation")
+<div ui-view>
+
+
+</div>
+
+
+
+
+@*<div class="card bg-primary mb-3">
+    <div class="card-header">
+
+        @ViewBag.Title
+
+
+        @Html.ActionLink("+", "Create", null, new { @class = "btn btn-sm btn-warning float-right" })
+
+    </div>
+
+    <table class="table table-sm card-body">
+        <thead>
+            <tr>
+                <th scope="col">
+
+                    @Html.DisplayNameFor(model => model.RequestType)
+                </th>
+                <th scope="col">
+
+                    @Html.DisplayNameFor(model => model.RequestDescription)
+                </th>
+                <th scope="col">
+
+                    @Html.DisplayNameFor(model => model.Status)
+
+                </th>
+             
+                <th scope="col">
+
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </th>
+                <th scope="col">
+
+                    @Html.DisplayNameFor(model => model.CreatedBy)
+                </th>
+                <th scope="col"></th>
+            </tr>
+        <thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RequestType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RequestDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit")" style="text-decoration: none ;">
+
+                            <i class="fa fa-edit"></i>
+                        </a>
+                       
+                        @if (item.Status.Equals(MAS_WorkFlowService.RequestState.APPROVED.DisplayName))
+                        {
+                            <a href="@Url.Action("PickRequestForMDCSProcessing", "RequestUIFlow", new { Id = item.Id }, null)" style="text-decoration: none ;">
+
+                                <i class="fa fa-file-text-o "></i>
+                            </a>
+                      
+                        }
+                        else
+                        {
+                            <a href="@Url.Action(item.View, "RequestUIFlow", new { Id = item.Id }, null)" style="text-decoration: none ;">
+
+                                <i class="fa fa-file-text-o "></i>
+                            </a>
+                      
+                        }
+
+                        <a href="@Url.Action("Delete", new { Id = item.Id })">
+
+                            <i class="fa fa-trash"></i>
+                        </a>
+                      
+                    </td>
+                </tr>
+
+
+            }
+        </tbody>
+    </table>
+
+
+
+</div>
+<div class="float-right" style="padding-right:7px;">
+    <ul class="pagination pagination-sm">
+        <li class="page-item disabled">
+            <a class="page-link" href="#">&laquo;</a>
+        </li>
+        <li class="page-item active">
+            <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">4</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">5</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">&raquo;</a>
+        </li>
+    </ul>
+</div>*@

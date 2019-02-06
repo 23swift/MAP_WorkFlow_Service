@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MAS.Models.MaintenanceMaster>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card bg-primary mb-3" style="margin-top:5px;">
+<div class="card-header">
+        Index
+            @Html.ActionLink("+", "Create", null, new { @class = "btn btn-sm btn-warning float-right" })
+    </div>
+
+<table class="table  table-sm  card-body">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+           <div class="float-md-right">
+
+               <a href="@Url.Action("Edit", new { id=item.Id })" class="btn btn-sm btn-primary">
+                   <i class="fa fa-edit"></i>
+               </a>
+               <a href="@Url.Action("Details", new { id=item.Id })" class="btn btn-sm btn-primary">
+                   <i class="fa fa-file-text-o"></i>
+               </a>
+               <a href="@Url.Action("Delete", new { id=item.Id })" class="btn btn-sm btn-primary">
+
+                   <i class="fa fa-trash"></i>
+               </a>
+           </div>
+			
+        </td>
+    </tr>
+}
+
+</table>
+</div>

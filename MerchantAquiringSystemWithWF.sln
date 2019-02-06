@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MerchantAquiringSystemWithWF", "MerchantAquiringSystemWithWF\MerchantAquiringSystemWithWF.csproj", "{102EB302-7E6C-4345-AC4B-C3424F26B66F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAS_Test", "MAS_Test\MAS_Test.csproj", "{75E32A0F-DF3A-4169-914B-53FFD658262A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DA", "DA\DA.csproj", "{C1F0B500-4B11-49B0-8ACB-5A00D390CC45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAS_WorkFlowService", "MAS_WorkFlowService\MAS_WorkFlowService.csproj", "{E02A7787-8EC3-4F46-A2F0-B55093564485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAV2", "DAV2\DAV2.csproj", "{88D0FF84-38B4-42DD-A65A-FAE300897387}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{25701D4F-8925-4954-ACFF-5321C9371A30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAP_FrontEnd", "MAP_FrontEnd\MAP_FrontEnd.csproj", "{AB023CB3-B0ED-4751-9CE0-B6E759A47F64}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E02A7787-8EC3-4F46-A2F0-B55093564485} = {E02A7787-8EC3-4F46-A2F0-B55093564485}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{102EB302-7E6C-4345-AC4B-C3424F26B66F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{102EB302-7E6C-4345-AC4B-C3424F26B66F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{102EB302-7E6C-4345-AC4B-C3424F26B66F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{102EB302-7E6C-4345-AC4B-C3424F26B66F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75E32A0F-DF3A-4169-914B-53FFD658262A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75E32A0F-DF3A-4169-914B-53FFD658262A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75E32A0F-DF3A-4169-914B-53FFD658262A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75E32A0F-DF3A-4169-914B-53FFD658262A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1F0B500-4B11-49B0-8ACB-5A00D390CC45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1F0B500-4B11-49B0-8ACB-5A00D390CC45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1F0B500-4B11-49B0-8ACB-5A00D390CC45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1F0B500-4B11-49B0-8ACB-5A00D390CC45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E02A7787-8EC3-4F46-A2F0-B55093564485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E02A7787-8EC3-4F46-A2F0-B55093564485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E02A7787-8EC3-4F46-A2F0-B55093564485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E02A7787-8EC3-4F46-A2F0-B55093564485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88D0FF84-38B4-42DD-A65A-FAE300897387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88D0FF84-38B4-42DD-A65A-FAE300897387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88D0FF84-38B4-42DD-A65A-FAE300897387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88D0FF84-38B4-42DD-A65A-FAE300897387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25701D4F-8925-4954-ACFF-5321C9371A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25701D4F-8925-4954-ACFF-5321C9371A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25701D4F-8925-4954-ACFF-5321C9371A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25701D4F-8925-4954-ACFF-5321C9371A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB023CB3-B0ED-4751-9CE0-B6E759A47F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB023CB3-B0ED-4751-9CE0-B6E759A47F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB023CB3-B0ED-4751-9CE0-B6E759A47F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB023CB3-B0ED-4751-9CE0-B6E759A47F64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://sw10200250:8080/tfs/map
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Business\\Business.csproj
+		SccProjectName1 = Business
+		SccLocalPath1 = Business
+		SccProjectUniqueName2 = DAV2\\DAV2.csproj
+		SccProjectName2 = DAV2
+		SccLocalPath2 = DAV2
+		SccProjectUniqueName3 = MAS_Test\\MAS_Test.csproj
+		SccProjectName3 = MAS_Test
+		SccLocalPath3 = MAS_Test
+		SccProjectUniqueName4 = MerchantAquiringSystemWithWF\\MerchantAquiringSystemWithWF.csproj
+		SccProjectName4 = MerchantAquiringSystemWithWF
+		SccLocalPath4 = MerchantAquiringSystemWithWF
+		SccProjectUniqueName5 = MAP_FrontEnd\\MAP_FrontEnd.csproj
+		SccProjectName5 = MAP_FrontEnd
+		SccLocalPath5 = MAP_FrontEnd
+		SccProjectUniqueName6 = MAS_WorkFlowService\\MAS_WorkFlowService.csproj
+		SccProjectName6 = MAS_WorkFlowService
+		SccLocalPath6 = MAS_WorkFlowService
+		SccProjectUniqueName7 = DA\\DA.csproj
+		SccProjectName7 = DA
+		SccLocalPath7 = DA
+	EndGlobalSection
+EndGlobal

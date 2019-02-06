@@ -1,0 +1,201 @@
+﻿@using MAS_WorkFlowService;
+@model MerchantAquiringSystemWithWF.Models.RequestFormViewModel
+@{
+    //ViewBag.Title = "Details";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_TabedLayout.cshtml";
+    string requesStatus = ViewBag.status as string;
+    if (requesStatus.Equals(RequestStatusConstants.DRAFT)|| requesStatus.Equals(RequestStatusConstants.AO_CHECKING)) { Layout = "~/Views/Shared/_Layout.cshtml"; }
+    else { Layout = "~/Views/Shared/_TabedLayout.cshtml"; }
+    string returnRouteView = (string)ViewBag.returnAction;
+    string submitRouteView = (string)ViewBag.submitAction;
+    List<DA.Models.Branch> branchList = ViewBag.brnachList;
+}
+
+@*<h2>AO Checking</h2>*@
+<div class="row clearfix-custom">
+    <div class="form-header">
+        <p class="header-title">
+            @requesStatus
+
+        </p>
+
+    </div>
+</div>
+<div>
+    <h4>@ViewBag.Title</h4>
+    <hr />
+    
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-2">
+                    @Html.DisplayNameFor(model => model.RequestType)
+                </label>
+
+                <div class="col-md-10">
+
+                    @*@Html.DisplayFor(model => model.RequestType, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @ViewBag.Title
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-2">
+                    @Html.DisplayNameFor(model => model.RequestDescription)
+                </label>
+
+                <div class="col-md-10">
+
+                    @Html.DisplayFor(model => model.RequestDescription, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-2">
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </label>
+
+                <div class="col-md-10">
+
+                    @Html.DisplayFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-2">
+                    @Html.DisplayNameFor(model => model.CreatedBy)
+                </label>
+
+                <div class="col-md-10">
+
+                    @Html.DisplayFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-2">
+                    @Html.DisplayNameFor(model => model.WithRequirements)
+                </label>
+
+                <div class="col-md-10">
+
+                    @Html.DisplayFor(model => model.WithRequirements, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-2">
+                    @Html.DisplayNameFor(model => model.WithException)
+                </label>
+
+                <div class="col-md-10">
+
+                    @Html.DisplayFor(model => model.WithException, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-2">
+                    @Html.DisplayNameFor(model => model.eMail)
+                </label>
+
+                <div class="col-md-10">
+
+                    @Html.DisplayFor(model => model.eMail, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+@*<p>
+    @Html.ActionLink("Back to List", "Index", "Requests") |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Return To Maker", returnRouteView, new { id = Model.Id }) |
+    @Html.ActionLink("Submit For MAU Screening", submitRouteView, "RequestUIFlow", new { id = Model.Id }, null)
+</p>*@
+<div class="row" style="margin:0;padding:0;">
+    <div class="col-md-12" style="margin:0;padding:0;">
+        <div class="btn-group float-right" role="group" aria-label="Basic example">
+            @Html.ActionLink("Back to List", "Index", "Requests", null, new { @class = "btn btn-sm btn-warning" })
+            @*@Html.ActionLink("Edit", "Edit", "Requests", new { id = Model.Id }, new { @class = "btn btn-sm btn-warning" })*@
+            @Html.ActionLink("Return To Maker", returnRouteView, "RequestUIFlow", new { id = Model.Id }, new { @class = "btn btn-sm btn-warning" })
+            @Html.ActionLink("Submit For MAU Screening", submitRouteView, "RequestUIFlow", new { id = Model.Id }, new { @class = "btn btn-sm btn-primary" })
+
+        </div>
+    </div>
+</div>
+
+<hr style="margin-top:10px;" />
+
+
+
+<div class="row" style="margin:0;padding:0; margin-top:10px;">
+    <div class="col-md-12" style="margin:0; padding:0;">
+        <div class="card bg-primary mb-3">
+            <div class="card-header">
+                @Html.ActionLink("+", "Create", "Branch", new { requestId = Model.Id }, new { @class = "btn btn-sm btn-warning float-right" })
+                Branches
+            </div>
+            <table class="table table-condensed card-body">
+                <thead>
+                    <tr>
+                        <th>
+
+                            Branch name
+                        </th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in branchList)
+                    {
+                        <tr>
+                            <td>@item.DBAName</td>
+                            <td>@item.dbaAddress1</td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>

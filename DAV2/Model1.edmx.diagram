@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6275ffce844e457d8f26628bed3ef0a7" Name="Diagram1">
+        <EntityTypeShape EntityType="MAP_DB_V2Model.AdditionalFacility" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.Affiliation" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.Branches" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.Business" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.FileMaintenance" Width="2.125" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.MaintenanceMID" Width="2.75" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.MasterBranches" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.MasterBusiness" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.MasterMaintenance" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.MasterMID" Width="1.5" PointX="3" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.MasterTID" Width="1.5" PointX="3" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.MID" Width="1.5" PointX="5.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.POS" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.Request" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.TID" Width="1.5" PointX="5.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.AdditionalMID" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.BranchAffiliation" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_AdditionalFacility_MasterBranches" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_AdditionalFacility_Request" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_AdditionalMID_AdditionalFacility" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_Affiliation_Business" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_Affiliation_MasterBusiness" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_Affiliation_Request1" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_BranchAffiliation_Affiliation" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_BranchAffiliation_Branches" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_Branches_Business1" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_MID_Branches1" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_TID_Branches" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_FileMaintenance_MasterBusiness" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_FileMaintenance_Request" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_MaintenanceMID_FileMaintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_MasterBranches_MasterBusiness" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_MasterMID_MasterBranches" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_MasterTID_MasterBranches" ManuallyRouted="false" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_POS_Request" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.DetailsMaintenance" Width="1.5" PointX="10" PointY="4.375" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_DetailsMaintenance_MasterMaintenance" />
+        <EntityTypeShape EntityType="MAP_DB_V2Model.MaintenanceFields" Width="2.125" PointX="5.875" PointY="12.875" />
+        <AssociationConnector Association="MAP_DB_V2Model.FK_MaintenanceFields_FileMaintenance" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MAS_MainFlow" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:52060/MAS_MainFlow.xamlx?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:52060/MAS_MainFlow.xamlx?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_LoadRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadRequest" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AOChecking_InputMessage">
+    <wsdl:part name="parameters" element="tns:AOChecking" />
+  </wsdl:message>
+  <wsdl:message name="IService_AOChecking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AOCheckingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SubmitToAOChecker_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitToAOChecker" />
+  </wsdl:message>
+  <wsdl:message name="IService_SubmitToAOChecker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitToAOCheckerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PreScreenDecission_InputMessage">
+    <wsdl:part name="parameters" element="tns:PreScreenDecission" />
+  </wsdl:message>
+  <wsdl:message name="IService_PreScreenDecission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PreScreenDecissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckPOSRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPOSRequest" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckPOSRequest_OutputMessage" />
+  <wsdl:message name="IService_CompleteRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteRequest" />
+  </wsdl:message>
+  <wsdl:message name="IService_CompleteRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_QualityApproval_InputMessage">
+    <wsdl:part name="parameters" element="tns:QualityApproval" />
+  </wsdl:message>
+  <wsdl:message name="IService_QualityApproval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QualityApprovalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FinalApproval_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinalApproval" />
+  </wsdl:message>
+  <wsdl:message name="IService_FinalApproval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinalApprovalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PickRequestForMDCSProcessing_InputMessage">
+    <wsdl:part name="parameters" element="tns:PickRequestForMDCSProcessing" />
+  </wsdl:message>
+  <wsdl:message name="IService_PickRequestForMDCSProcessing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PickRequestForMDCSProcessingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SubmitForPOSProcessing_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitForPOSProcessing" />
+  </wsdl:message>
+  <wsdl:message name="IService_SubmitForPOSProcessing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitForPOSProcessingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RequestApproval_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestApproval" />
+  </wsdl:message>
+  <wsdl:message name="IService_RequestApproval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestApprovalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ReturnToMakerFormApproval_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnToMakerFormApproval" />
+  </wsdl:message>
+  <wsdl:message name="IService_ReturnToMakerFormApproval_OutputMessage" />
+  <wsdl:portType name="IService">
+    <wsdl:operation name="LoadRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/LoadRequest" message="tns:IService_LoadRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LoadRequestResponse" message="tns:IService_LoadRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AOChecking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AOChecking" message="tns:IService_AOChecking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AOCheckingResponse" message="tns:IService_AOChecking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitToAOChecker">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SubmitToAOChecker" message="tns:IService_SubmitToAOChecker_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SubmitToAOCheckerResponse" message="tns:IService_SubmitToAOChecker_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PreScreenDecission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PreScreenDecission" message="tns:IService_PreScreenDecission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PreScreenDecissionResponse" message="tns:IService_PreScreenDecission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPOSRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CheckPOSRequest" message="tns:IService_CheckPOSRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CheckPOSRequestResponse" message="tns:IService_CheckPOSRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CompleteRequest" message="tns:IService_CompleteRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CompleteRequestResponse" message="tns:IService_CompleteRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QualityApproval">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/QualityApproval" message="tns:IService_QualityApproval_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/QualityApprovalResponse" message="tns:IService_QualityApproval_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinalApproval">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FinalApproval" message="tns:IService_FinalApproval_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FinalApprovalResponse" message="tns:IService_FinalApproval_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PickRequestForMDCSProcessing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PickRequestForMDCSProcessing" message="tns:IService_PickRequestForMDCSProcessing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PickRequestForMDCSProcessingResponse" message="tns:IService_PickRequestForMDCSProcessing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitForPOSProcessing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SubmitForPOSProcessing" message="tns:IService_SubmitForPOSProcessing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SubmitForPOSProcessingResponse" message="tns:IService_SubmitForPOSProcessing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestApproval">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RequestApproval" message="tns:IService_RequestApproval_InputMessage" />
+      <wsdl:output wsaw:Action="RequestApproval" message="tns:IService_RequestApproval_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnToMakerFormApproval">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ReturnToMakerFormApproval" message="tns:IService_ReturnToMakerFormApproval_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ReturnToMakerFormApprovalResponse" message="tns:IService_ReturnToMakerFormApproval_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadRequest">
+      <soap:operation soapAction="http://tempuri.org/IService/LoadRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AOChecking">
+      <soap:operation soapAction="http://tempuri.org/IService/AOChecking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitToAOChecker">
+      <soap:operation soapAction="http://tempuri.org/IService/SubmitToAOChecker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreScreenDecission">
+      <soap:operation soapAction="http://tempuri.org/IService/PreScreenDecission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPOSRequest">
+      <soap:operation soapAction="http://tempuri.org/IService/CheckPOSRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteRequest">
+      <soap:operation soapAction="http://tempuri.org/IService/CompleteRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QualityApproval">
+      <soap:operation soapAction="http://tempuri.org/IService/QualityApproval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalApproval">
+      <soap:operation soapAction="http://tempuri.org/IService/FinalApproval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PickRequestForMDCSProcessing">
+      <soap:operation soapAction="http://tempuri.org/IService/PickRequestForMDCSProcessing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitForPOSProcessing">
+      <soap:operation soapAction="http://tempuri.org/IService/SubmitForPOSProcessing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestApproval">
+      <soap:operation soapAction="http://tempuri.org/IService/RequestApproval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnToMakerFormApproval">
+      <soap:operation soapAction="http://tempuri.org/IService/ReturnToMakerFormApproval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MAS_MainFlow">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:52060/MAS_MainFlow.xamlx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

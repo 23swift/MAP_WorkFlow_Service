@@ -1,0 +1,1306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MAP_DB_V2Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MAP_DB_V2ModelStoreContainer">
+    <EntitySet Name="AdditionalFacility" EntityType="MAP_DB_V2Model.Store.AdditionalFacility" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Affiliation" EntityType="MAP_DB_V2Model.Store.Affiliation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Branches" EntityType="MAP_DB_V2Model.Store.Branches" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Business" EntityType="MAP_DB_V2Model.Store.Business" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FileMaintenance" EntityType="MAP_DB_V2Model.Store.FileMaintenance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MaintenanceMID" EntityType="MAP_DB_V2Model.Store.MaintenanceMID" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterBranches" EntityType="MAP_DB_V2Model.Store.MasterBranches" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterBusiness" EntityType="MAP_DB_V2Model.Store.MasterBusiness" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterMaintenance" EntityType="MAP_DB_V2Model.Store.MasterMaintenance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterMID" EntityType="MAP_DB_V2Model.Store.MasterMID" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterTID" EntityType="MAP_DB_V2Model.Store.MasterTID" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MID" EntityType="MAP_DB_V2Model.Store.MID" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="POS" EntityType="MAP_DB_V2Model.Store.POS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Request" EntityType="MAP_DB_V2Model.Store.Request" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TID" EntityType="MAP_DB_V2Model.Store.TID" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AdditionalMID" EntityType="MAP_DB_V2Model.Store.AdditionalMID" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BranchAffiliation" EntityType="MAP_DB_V2Model.Store.BranchAffiliation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetailsMaintenance" EntityType="MAP_DB_V2Model.Store.DetailsMaintenance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MaintenanceFields" EntityType="MAP_DB_V2Model.Store.MaintenanceFields" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AdditionalFacility_MasterBranches" Association="MAP_DB_V2Model.Store.FK_AdditionalFacility_MasterBranches">
+      <End Role="MasterBranches" EntitySet="MasterBranches" />
+      <End Role="AdditionalFacility" EntitySet="AdditionalFacility" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdditionalFacility_Request" Association="MAP_DB_V2Model.Store.FK_AdditionalFacility_Request">
+      <End Role="Request" EntitySet="Request" />
+      <End Role="AdditionalFacility" EntitySet="AdditionalFacility" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdditionalMID_AdditionalFacility" Association="MAP_DB_V2Model.Store.FK_AdditionalMID_AdditionalFacility">
+      <End Role="AdditionalFacility" EntitySet="AdditionalFacility" />
+      <End Role="AdditionalMID" EntitySet="AdditionalMID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Affiliation_Business" Association="MAP_DB_V2Model.Store.FK_Affiliation_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Affiliation" EntitySet="Affiliation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Affiliation_MasterBusiness" Association="MAP_DB_V2Model.Store.FK_Affiliation_MasterBusiness">
+      <End Role="MasterBusiness" EntitySet="MasterBusiness" />
+      <End Role="Affiliation" EntitySet="Affiliation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Affiliation_Request1" Association="MAP_DB_V2Model.Store.FK_Affiliation_Request1">
+      <End Role="Request" EntitySet="Request" />
+      <End Role="Affiliation" EntitySet="Affiliation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchAffiliation_Affiliation" Association="MAP_DB_V2Model.Store.FK_BranchAffiliation_Affiliation">
+      <End Role="Affiliation" EntitySet="Affiliation" />
+      <End Role="BranchAffiliation" EntitySet="BranchAffiliation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchAffiliation_Branches" Association="MAP_DB_V2Model.Store.FK_BranchAffiliation_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="BranchAffiliation" EntitySet="BranchAffiliation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branches_Business1" Association="MAP_DB_V2Model.Store.FK_Branches_Business1">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Branches" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MID_Branches1" Association="MAP_DB_V2Model.Store.FK_MID_Branches1">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="MID" EntitySet="MID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TID_Branches" Association="MAP_DB_V2Model.Store.FK_TID_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="TID" EntitySet="TID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FileMaintenance_MasterBusiness" Association="MAP_DB_V2Model.Store.FK_FileMaintenance_MasterBusiness">
+      <End Role="MasterBusiness" EntitySet="MasterBusiness" />
+      <End Role="FileMaintenance" EntitySet="FileMaintenance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FileMaintenance_Request" Association="MAP_DB_V2Model.Store.FK_FileMaintenance_Request">
+      <End Role="Request" EntitySet="Request" />
+      <End Role="FileMaintenance" EntitySet="FileMaintenance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaintenanceMID_FileMaintenance" Association="MAP_DB_V2Model.Store.FK_MaintenanceMID_FileMaintenance">
+      <End Role="FileMaintenance" EntitySet="FileMaintenance" />
+      <End Role="MaintenanceMID" EntitySet="MaintenanceMID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MasterBranches_MasterBusiness" Association="MAP_DB_V2Model.Store.FK_MasterBranches_MasterBusiness">
+      <End Role="MasterBusiness" EntitySet="MasterBusiness" />
+      <End Role="MasterBranches" EntitySet="MasterBranches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MasterMID_MasterBranches" Association="MAP_DB_V2Model.Store.FK_MasterMID_MasterBranches">
+      <End Role="MasterBranches" EntitySet="MasterBranches" />
+      <End Role="MasterMID" EntitySet="MasterMID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MasterTID_MasterBranches" Association="MAP_DB_V2Model.Store.FK_MasterTID_MasterBranches">
+      <End Role="MasterBranches" EntitySet="MasterBranches" />
+      <End Role="MasterTID" EntitySet="MasterTID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_POS_Request" Association="MAP_DB_V2Model.Store.FK_POS_Request">
+      <End Role="Request" EntitySet="Request" />
+      <End Role="POS" EntitySet="POS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailsMaintenance_MasterMaintenance" Association="MAP_DB_V2Model.Store.FK_DetailsMaintenance_MasterMaintenance">
+      <End Role="MasterMaintenance" EntitySet="MasterMaintenance" />
+      <End Role="DetailsMaintenance" EntitySet="DetailsMaintenance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaintenanceFields_FileMaintenance" Association="MAP_DB_V2Model.Store.FK_MaintenanceFields_FileMaintenance">
+      <End Role="FileMaintenance" EntitySet="FileMaintenance" />
+      <End Role="MaintenanceFields" EntitySet="MaintenanceFields" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AdditionalFacility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Branch_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Affiliation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Business_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Branches">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Business_Id" Type="int" Nullable="true" />
+    <Property Name="AddFacility_Id" Type="int" Nullable="true" />
+    <Property Name="Code" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="BranchCode" Type="nchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Business">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="LegalName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Ownership_Id" Type="int" Nullable="true" />
+    <Property Name="DTIRegDate" Type="datetime" Nullable="true" />
+    <Property Name="Code" Type="uniqueidentifier" Nullable="true" />
+  </EntityType>
+  <EntityType Name="FileMaintenance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Business_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="MaintenanceMID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="MonitorCode_Id" Type="int" Nullable="true" />
+    <Property Name="CardPlans_Id" Type="int" Nullable="true" />
+    <Property Name="CurrencyId" Type="int" Nullable="true" />
+    <Property Name="MaintenanceMID1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MaintenanceMID11" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MaintenanceMID12" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MaintenanceMID13" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MasterBranches">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Business_Id" Type="int" Nullable="true" />
+    <Property Name="AddFacility_Id" Type="int" Nullable="true" />
+    <Property Name="Code" Type="uniqueidentifier" Nullable="true" />
+  </EntityType>
+  <EntityType Name="MasterBusiness">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="LegalName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Code" Type="uniqueidentifier" Nullable="true" />
+  </EntityType>
+  <EntityType Name="MasterMaintenance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="Code" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="Description" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MasterMID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="MonitorCode_Id" Type="int" Nullable="true" />
+    <Property Name="CardPlans_Id" Type="int" Nullable="true" />
+    <Property Name="MID" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Branch_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="MasterTID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Branch_Id" Type="int" Nullable="true" />
+    <Property Name="TID" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="MonitorCode_Id" Type="int" Nullable="true" />
+    <Property Name="CardPlans_Id" Type="int" Nullable="true" />
+    <Property Name="MID1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Branch_Id" Type="int" Nullable="true" />
+    <Property Name="MID11" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MID12" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MID13" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="POS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Branch_Id" Type="int" Nullable="false" />
+    <Property Name="Code" Type="uniqueidentifier" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequestType" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="true" />
+    <Property Name="Createdby" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Branch_Id" Type="int" Nullable="true" />
+    <Property Name="TID1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="TID11" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="TID12" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="TID13" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AdditionalMID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="MonitorCode_Id" Type="int" Nullable="true" />
+    <Property Name="CardPlans_Id" Type="int" Nullable="true" />
+    <Property Name="CurrencyId" Type="int" Nullable="true" />
+    <Property Name="AdditionalMID1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AdditionalMID11" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AdditionalMID12" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AdditionalMID13" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BranchAffiliation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Branch_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="DetailsMaintenance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Masted_Id" Type="bigint" Nullable="true" />
+    <Property Name="Code" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="Description" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MaintenanceFields">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="DBA_TradeName" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_AdditionalFacility_MasterBranches">
+    <End Role="MasterBranches" Type="MAP_DB_V2Model.Store.MasterBranches" Multiplicity="0..1" />
+    <End Role="AdditionalFacility" Type="MAP_DB_V2Model.Store.AdditionalFacility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterBranches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdditionalFacility">
+        <PropertyRef Name="Branch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdditionalFacility_Request">
+    <End Role="Request" Type="MAP_DB_V2Model.Store.Request" Multiplicity="1" />
+    <End Role="AdditionalFacility" Type="MAP_DB_V2Model.Store.AdditionalFacility" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Request">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdditionalFacility">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdditionalMID_AdditionalFacility">
+    <End Role="AdditionalFacility" Type="MAP_DB_V2Model.Store.AdditionalFacility" Multiplicity="1" />
+    <End Role="AdditionalMID" Type="MAP_DB_V2Model.Store.AdditionalMID" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AdditionalFacility">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdditionalMID">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Affiliation_Business">
+    <End Role="Business" Type="MAP_DB_V2Model.Store.Business" Multiplicity="0..1" />
+    <End Role="Affiliation" Type="MAP_DB_V2Model.Store.Affiliation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Affiliation">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Affiliation_MasterBusiness">
+    <End Role="MasterBusiness" Type="MAP_DB_V2Model.Store.MasterBusiness" Multiplicity="0..1" />
+    <End Role="Affiliation" Type="MAP_DB_V2Model.Store.Affiliation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterBusiness">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Affiliation">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Affiliation_Request1">
+    <End Role="Request" Type="MAP_DB_V2Model.Store.Request" Multiplicity="1" />
+    <End Role="Affiliation" Type="MAP_DB_V2Model.Store.Affiliation" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Request">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Affiliation">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchAffiliation_Affiliation">
+    <End Role="Affiliation" Type="MAP_DB_V2Model.Store.Affiliation" Multiplicity="1" />
+    <End Role="BranchAffiliation" Type="MAP_DB_V2Model.Store.BranchAffiliation" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Affiliation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BranchAffiliation">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchAffiliation_Branches">
+    <End Role="Branches" Type="MAP_DB_V2Model.Store.Branches" Multiplicity="0..1" />
+    <End Role="BranchAffiliation" Type="MAP_DB_V2Model.Store.BranchAffiliation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BranchAffiliation">
+        <PropertyRef Name="Branch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branches_Business1">
+    <End Role="Business" Type="MAP_DB_V2Model.Store.Business" Multiplicity="0..1" />
+    <End Role="Branches" Type="MAP_DB_V2Model.Store.Branches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Branches">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MID_Branches1">
+    <End Role="Branches" Type="MAP_DB_V2Model.Store.Branches" Multiplicity="0..1" />
+    <End Role="MID" Type="MAP_DB_V2Model.Store.MID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MID">
+        <PropertyRef Name="Branch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TID_Branches">
+    <End Role="Branches" Type="MAP_DB_V2Model.Store.Branches" Multiplicity="0..1" />
+    <End Role="TID" Type="MAP_DB_V2Model.Store.TID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TID">
+        <PropertyRef Name="Branch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FileMaintenance_MasterBusiness">
+    <End Role="MasterBusiness" Type="MAP_DB_V2Model.Store.MasterBusiness" Multiplicity="0..1" />
+    <End Role="FileMaintenance" Type="MAP_DB_V2Model.Store.FileMaintenance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterBusiness">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FileMaintenance">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FileMaintenance_Request">
+    <End Role="Request" Type="MAP_DB_V2Model.Store.Request" Multiplicity="1" />
+    <End Role="FileMaintenance" Type="MAP_DB_V2Model.Store.FileMaintenance" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Request">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FileMaintenance">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaintenanceMID_FileMaintenance">
+    <End Role="FileMaintenance" Type="MAP_DB_V2Model.Store.FileMaintenance" Multiplicity="1" />
+    <End Role="MaintenanceMID" Type="MAP_DB_V2Model.Store.MaintenanceMID" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="FileMaintenance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaintenanceMID">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MasterBranches_MasterBusiness">
+    <End Role="MasterBusiness" Type="MAP_DB_V2Model.Store.MasterBusiness" Multiplicity="0..1" />
+    <End Role="MasterBranches" Type="MAP_DB_V2Model.Store.MasterBranches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterBusiness">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MasterBranches">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MasterMID_MasterBranches">
+    <End Role="MasterBranches" Type="MAP_DB_V2Model.Store.MasterBranches" Multiplicity="0..1" />
+    <End Role="MasterMID" Type="MAP_DB_V2Model.Store.MasterMID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterBranches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MasterMID">
+        <PropertyRef Name="Branch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MasterTID_MasterBranches">
+    <End Role="MasterBranches" Type="MAP_DB_V2Model.Store.MasterBranches" Multiplicity="0..1" />
+    <End Role="MasterTID" Type="MAP_DB_V2Model.Store.MasterTID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterBranches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MasterTID">
+        <PropertyRef Name="Branch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_POS_Request">
+    <End Role="Request" Type="MAP_DB_V2Model.Store.Request" Multiplicity="1" />
+    <End Role="POS" Type="MAP_DB_V2Model.Store.POS" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Request">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="POS">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailsMaintenance_MasterMaintenance">
+    <End Role="MasterMaintenance" Type="MAP_DB_V2Model.Store.MasterMaintenance" Multiplicity="0..1" />
+    <End Role="DetailsMaintenance" Type="MAP_DB_V2Model.Store.DetailsMaintenance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterMaintenance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetailsMaintenance">
+        <PropertyRef Name="Masted_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaintenanceFields_FileMaintenance">
+    <End Role="FileMaintenance" Type="MAP_DB_V2Model.Store.FileMaintenance" Multiplicity="1" />
+    <End Role="MaintenanceFields" Type="MAP_DB_V2Model.Store.MaintenanceFields" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="FileMaintenance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaintenanceFields">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MAP_DB_V2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdditionalFacility">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Branch_Id" Type="Int32" />
+          <NavigationProperty Name="MasterBranches" Relationship="Self.FK_AdditionalFacility_MasterBranches" FromRole="AdditionalFacility" ToRole="MasterBranches" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_AdditionalFacility_Request" FromRole="AdditionalFacility" ToRole="Request" />
+          <NavigationProperty Name="AdditionalMID" Relationship="Self.FK_AdditionalMID_AdditionalFacility" FromRole="AdditionalFacility" ToRole="AdditionalMID" />
+        </EntityType>
+        <EntityType Name="Affiliation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Business_Id" Type="Int32" />
+          <NavigationProperty Name="Business" Relationship="Self.FK_Affiliation_Business" FromRole="Affiliation" ToRole="Business" />
+          <NavigationProperty Name="MasterBusiness" Relationship="Self.FK_Affiliation_MasterBusiness" FromRole="Affiliation" ToRole="MasterBusiness" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_Affiliation_Request1" FromRole="Affiliation" ToRole="Request" />
+          <NavigationProperty Name="BranchAffiliation" Relationship="Self.FK_BranchAffiliation_Affiliation" FromRole="Affiliation" ToRole="BranchAffiliation" />
+        </EntityType>
+        <EntityType Name="Branches">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Business_Id" Type="Int32" />
+          <Property Name="AddFacility_Id" Type="Int32" />
+          <Property Name="Code" Type="Guid" />
+          <Property Name="BranchCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="BranchAffiliation" Relationship="Self.FK_BranchAffiliation_Branches" FromRole="Branches" ToRole="BranchAffiliation" />
+          <NavigationProperty Name="Business" Relationship="Self.FK_Branches_Business1" FromRole="Branches" ToRole="Business" />
+          <NavigationProperty Name="MID" Relationship="Self.FK_MID_Branches1" FromRole="Branches" ToRole="MID" />
+          <NavigationProperty Name="TID" Relationship="Self.FK_TID_Branches" FromRole="Branches" ToRole="TID" />
+        </EntityType>
+        <EntityType Name="Business">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="LegalName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ownership_Id" Type="Int32" />
+          <Property Name="DTIRegDate" Type="DateTime" Precision="0" />
+          <Property Name="Code" Type="Guid" />
+          <NavigationProperty Name="Affiliation" Relationship="Self.FK_Affiliation_Business" FromRole="Business" ToRole="Affiliation" />
+          <NavigationProperty Name="Branches" Relationship="Self.FK_Branches_Business1" FromRole="Business" ToRole="Branches" />
+        </EntityType>
+        <EntityType Name="FileMaintenance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Business_Id" Type="Int32" />
+          <NavigationProperty Name="MasterBusiness" Relationship="Self.FK_FileMaintenance_MasterBusiness" FromRole="FileMaintenance" ToRole="MasterBusiness" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_FileMaintenance_Request" FromRole="FileMaintenance" ToRole="Request" />
+          <NavigationProperty Name="MaintenanceMID" Relationship="Self.FK_MaintenanceMID_FileMaintenance" FromRole="FileMaintenance" ToRole="MaintenanceMID" />
+          <NavigationProperty Name="MaintenanceFields" Relationship="MAP_DB_V2Model.FK_MaintenanceFields_FileMaintenance" FromRole="FileMaintenance" ToRole="MaintenanceFields" />
+        </EntityType>
+        <EntityType Name="MaintenanceMID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="MonitorCode_Id" Type="Int32" />
+          <Property Name="CardPlans_Id" Type="Int32" />
+          <Property Name="CurrencyId" Type="Int32" />
+          <Property Name="MaintenanceMID1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FileMaintenance" Relationship="Self.FK_MaintenanceMID_FileMaintenance" FromRole="MaintenanceMID" ToRole="FileMaintenance" />
+          <Property Name="MaintenanceMID11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaintenanceMID12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaintenanceMID13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MasterBranches">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Business_Id" Type="Int32" />
+          <Property Name="AddFacility_Id" Type="Int32" />
+          <Property Name="Code" Type="Guid" />
+          <NavigationProperty Name="AdditionalFacility" Relationship="Self.FK_AdditionalFacility_MasterBranches" FromRole="MasterBranches" ToRole="AdditionalFacility" />
+          <NavigationProperty Name="MasterBusiness" Relationship="Self.FK_MasterBranches_MasterBusiness" FromRole="MasterBranches" ToRole="MasterBusiness" />
+          <NavigationProperty Name="MasterMID" Relationship="Self.FK_MasterMID_MasterBranches" FromRole="MasterBranches" ToRole="MasterMID" />
+          <NavigationProperty Name="MasterTID" Relationship="Self.FK_MasterTID_MasterBranches" FromRole="MasterBranches" ToRole="MasterTID" />
+        </EntityType>
+        <EntityType Name="MasterBusiness">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="LegalName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="Guid" />
+          <NavigationProperty Name="Affiliation" Relationship="Self.FK_Affiliation_MasterBusiness" FromRole="MasterBusiness" ToRole="Affiliation" />
+          <NavigationProperty Name="FileMaintenance" Relationship="Self.FK_FileMaintenance_MasterBusiness" FromRole="MasterBusiness" ToRole="FileMaintenance" />
+          <NavigationProperty Name="MasterBranches" Relationship="Self.FK_MasterBranches_MasterBusiness" FromRole="MasterBusiness" ToRole="MasterBranches" />
+        </EntityType>
+        <EntityType Name="MasterMaintenance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DetailsMaintenance" Relationship="MAP_DB_V2Model.FK_DetailsMaintenance_MasterMaintenance" FromRole="MasterMaintenance" ToRole="DetailsMaintenance" />
+        </EntityType>
+        <EntityType Name="MasterMID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="MonitorCode_Id" Type="Int32" />
+          <Property Name="CardPlans_Id" Type="Int32" />
+          <Property Name="MID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Branch_Id" Type="Int32" />
+          <NavigationProperty Name="MasterBranches" Relationship="Self.FK_MasterMID_MasterBranches" FromRole="MasterMID" ToRole="MasterBranches" />
+        </EntityType>
+        <EntityType Name="MasterTID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Branch_Id" Type="Int32" />
+          <Property Name="TID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MasterBranches" Relationship="Self.FK_MasterTID_MasterBranches" FromRole="MasterTID" ToRole="MasterBranches" />
+        </EntityType>
+        <EntityType Name="MID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="MonitorCode_Id" Type="Int32" />
+          <Property Name="CardPlans_Id" Type="Int32" />
+          <Property Name="MID1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Branch_Id" Type="Int32" />
+          <NavigationProperty Name="Branches" Relationship="Self.FK_MID_Branches1" FromRole="MID" ToRole="Branches" />
+          <Property Name="MID11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MID12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MID13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="POS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Branch_Id" Type="Int32" Nullable="false" />
+          <Property Name="Code" Type="Guid" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_POS_Request" FromRole="POS" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RequestType" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="Createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AdditionalFacility" Relationship="Self.FK_AdditionalFacility_Request" FromRole="Request" ToRole="AdditionalFacility" />
+          <NavigationProperty Name="Affiliation" Relationship="Self.FK_Affiliation_Request1" FromRole="Request" ToRole="Affiliation" />
+          <NavigationProperty Name="FileMaintenance" Relationship="Self.FK_FileMaintenance_Request" FromRole="Request" ToRole="FileMaintenance" />
+          <NavigationProperty Name="POS" Relationship="Self.FK_POS_Request" FromRole="Request" ToRole="POS" />
+        </EntityType>
+        <EntityType Name="TID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Branch_Id" Type="Int32" />
+          <Property Name="TID1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Branches" Relationship="Self.FK_TID_Branches" FromRole="TID" ToRole="Branches" />
+          <Property Name="TID11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TID12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TID13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AdditionalMID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="MonitorCode_Id" Type="Int32" />
+          <Property Name="CardPlans_Id" Type="Int32" />
+          <Property Name="CurrencyId" Type="Int32" />
+          <Property Name="AdditionalMID1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AdditionalFacility" Relationship="Self.FK_AdditionalMID_AdditionalFacility" FromRole="AdditionalMID" ToRole="AdditionalFacility" />
+          <Property Name="AdditionalMID11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdditionalMID12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdditionalMID13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BranchAffiliation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Branch_Id" Type="Int32" />
+          <NavigationProperty Name="Affiliation" Relationship="Self.FK_BranchAffiliation_Affiliation" FromRole="BranchAffiliation" ToRole="Affiliation" />
+          <NavigationProperty Name="Branches" Relationship="Self.FK_BranchAffiliation_Branches" FromRole="BranchAffiliation" ToRole="Branches" />
+        </EntityType>
+        <Association Name="FK_AdditionalFacility_MasterBranches">
+          <End Role="MasterBranches" Type="Self.MasterBranches" Multiplicity="0..1" />
+          <End Role="AdditionalFacility" Type="Self.AdditionalFacility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterBranches">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdditionalFacility">
+              <PropertyRef Name="Branch_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdditionalFacility_Request">
+          <End Role="Request" Type="Self.Request" Multiplicity="1" />
+          <End Role="AdditionalFacility" Type="Self.AdditionalFacility" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Request">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdditionalFacility">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdditionalMID_AdditionalFacility">
+          <End Role="AdditionalFacility" Type="Self.AdditionalFacility" Multiplicity="1" />
+          <End Role="AdditionalMID" Type="Self.AdditionalMID" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="AdditionalFacility">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdditionalMID">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Affiliation_Business">
+          <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+          <End Role="Affiliation" Type="Self.Affiliation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Business">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Affiliation">
+              <PropertyRef Name="Business_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Affiliation_MasterBusiness">
+          <End Role="MasterBusiness" Type="Self.MasterBusiness" Multiplicity="0..1" />
+          <End Role="Affiliation" Type="Self.Affiliation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterBusiness">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Affiliation">
+              <PropertyRef Name="Business_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Affiliation_Request1">
+          <End Role="Request" Type="Self.Request" Multiplicity="1" />
+          <End Role="Affiliation" Type="Self.Affiliation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Request">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Affiliation">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BranchAffiliation_Affiliation">
+          <End Role="Affiliation" Type="Self.Affiliation" Multiplicity="1" />
+          <End Role="BranchAffiliation" Type="Self.BranchAffiliation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Affiliation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BranchAffiliation">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BranchAffiliation_Branches">
+          <End Role="Branches" Type="Self.Branches" Multiplicity="0..1" />
+          <End Role="BranchAffiliation" Type="Self.BranchAffiliation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BranchAffiliation">
+              <PropertyRef Name="Branch_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Branches_Business1">
+          <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+          <End Role="Branches" Type="Self.Branches" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Business">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Branches">
+              <PropertyRef Name="Business_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MID_Branches1">
+          <End Role="Branches" Type="Self.Branches" Multiplicity="0..1" />
+          <End Role="MID" Type="Self.MID" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MID">
+              <PropertyRef Name="Branch_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TID_Branches">
+          <End Role="Branches" Type="Self.Branches" Multiplicity="0..1" />
+          <End Role="TID" Type="Self.TID" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TID">
+              <PropertyRef Name="Branch_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FileMaintenance_MasterBusiness">
+          <End Role="MasterBusiness" Type="Self.MasterBusiness" Multiplicity="0..1" />
+          <End Role="FileMaintenance" Type="Self.FileMaintenance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterBusiness">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FileMaintenance">
+              <PropertyRef Name="Business_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FileMaintenance_Request">
+          <End Role="Request" Type="Self.Request" Multiplicity="1" />
+          <End Role="FileMaintenance" Type="Self.FileMaintenance" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Request">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FileMaintenance">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaintenanceMID_FileMaintenance">
+          <End Role="FileMaintenance" Type="Self.FileMaintenance" Multiplicity="1" />
+          <End Role="MaintenanceMID" Type="Self.MaintenanceMID" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FileMaintenance">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MaintenanceMID">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MasterBranches_MasterBusiness">
+          <End Role="MasterBusiness" Type="Self.MasterBusiness" Multiplicity="0..1" />
+          <End Role="MasterBranches" Type="Self.MasterBranches" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterBusiness">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MasterBranches">
+              <PropertyRef Name="Business_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MasterMID_MasterBranches">
+          <End Role="MasterBranches" Type="Self.MasterBranches" Multiplicity="0..1" />
+          <End Role="MasterMID" Type="Self.MasterMID" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterBranches">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MasterMID">
+              <PropertyRef Name="Branch_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MasterTID_MasterBranches">
+          <End Role="MasterBranches" Type="Self.MasterBranches" Multiplicity="0..1" />
+          <End Role="MasterTID" Type="Self.MasterTID" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterBranches">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MasterTID">
+              <PropertyRef Name="Branch_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POS_Request">
+          <End Role="Request" Type="Self.Request" Multiplicity="1" />
+          <End Role="POS" Type="Self.POS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Request">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="POS">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MAP_DB_V2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdditionalFacility" EntityType="Self.AdditionalFacility" />
+          <EntitySet Name="Affiliation" EntityType="Self.Affiliation" />
+          <EntitySet Name="Branches" EntityType="Self.Branches" />
+          <EntitySet Name="Business" EntityType="Self.Business" />
+          <EntitySet Name="FileMaintenance" EntityType="Self.FileMaintenance" />
+          <EntitySet Name="MaintenanceMID" EntityType="Self.MaintenanceMID" />
+          <EntitySet Name="MasterBranches" EntityType="Self.MasterBranches" />
+          <EntitySet Name="MasterBusiness" EntityType="Self.MasterBusiness" />
+          <EntitySet Name="MasterMaintenance" EntityType="Self.MasterMaintenance" />
+          <EntitySet Name="MasterMID" EntityType="Self.MasterMID" />
+          <EntitySet Name="MasterTID" EntityType="Self.MasterTID" />
+          <EntitySet Name="MID" EntityType="Self.MID" />
+          <EntitySet Name="POS" EntityType="Self.POS" />
+          <EntitySet Name="Request" EntityType="Self.Request" />
+          <EntitySet Name="TID" EntityType="Self.TID" />
+          <EntitySet Name="AdditionalMID" EntityType="Self.AdditionalMID" />
+          <EntitySet Name="BranchAffiliation" EntityType="Self.BranchAffiliation" />
+          <AssociationSet Name="FK_AdditionalFacility_MasterBranches" Association="Self.FK_AdditionalFacility_MasterBranches">
+            <End Role="MasterBranches" EntitySet="MasterBranches" />
+            <End Role="AdditionalFacility" EntitySet="AdditionalFacility" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdditionalFacility_Request" Association="Self.FK_AdditionalFacility_Request">
+            <End Role="Request" EntitySet="Request" />
+            <End Role="AdditionalFacility" EntitySet="AdditionalFacility" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdditionalMID_AdditionalFacility" Association="Self.FK_AdditionalMID_AdditionalFacility">
+            <End Role="AdditionalFacility" EntitySet="AdditionalFacility" />
+            <End Role="AdditionalMID" EntitySet="AdditionalMID" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Affiliation_Business" Association="Self.FK_Affiliation_Business">
+            <End Role="Business" EntitySet="Business" />
+            <End Role="Affiliation" EntitySet="Affiliation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Affiliation_MasterBusiness" Association="Self.FK_Affiliation_MasterBusiness">
+            <End Role="MasterBusiness" EntitySet="MasterBusiness" />
+            <End Role="Affiliation" EntitySet="Affiliation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Affiliation_Request1" Association="Self.FK_Affiliation_Request1">
+            <End Role="Request" EntitySet="Request" />
+            <End Role="Affiliation" EntitySet="Affiliation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchAffiliation_Affiliation" Association="Self.FK_BranchAffiliation_Affiliation">
+            <End Role="Affiliation" EntitySet="Affiliation" />
+            <End Role="BranchAffiliation" EntitySet="BranchAffiliation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchAffiliation_Branches" Association="Self.FK_BranchAffiliation_Branches">
+            <End Role="Branches" EntitySet="Branches" />
+            <End Role="BranchAffiliation" EntitySet="BranchAffiliation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Branches_Business1" Association="Self.FK_Branches_Business1">
+            <End Role="Business" EntitySet="Business" />
+            <End Role="Branches" EntitySet="Branches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MID_Branches1" Association="Self.FK_MID_Branches1">
+            <End Role="Branches" EntitySet="Branches" />
+            <End Role="MID" EntitySet="MID" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TID_Branches" Association="Self.FK_TID_Branches">
+            <End Role="Branches" EntitySet="Branches" />
+            <End Role="TID" EntitySet="TID" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FileMaintenance_MasterBusiness" Association="Self.FK_FileMaintenance_MasterBusiness">
+            <End Role="MasterBusiness" EntitySet="MasterBusiness" />
+            <End Role="FileMaintenance" EntitySet="FileMaintenance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FileMaintenance_Request" Association="Self.FK_FileMaintenance_Request">
+            <End Role="Request" EntitySet="Request" />
+            <End Role="FileMaintenance" EntitySet="FileMaintenance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaintenanceMID_FileMaintenance" Association="Self.FK_MaintenanceMID_FileMaintenance">
+            <End Role="FileMaintenance" EntitySet="FileMaintenance" />
+            <End Role="MaintenanceMID" EntitySet="MaintenanceMID" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MasterBranches_MasterBusiness" Association="Self.FK_MasterBranches_MasterBusiness">
+            <End Role="MasterBusiness" EntitySet="MasterBusiness" />
+            <End Role="MasterBranches" EntitySet="MasterBranches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MasterMID_MasterBranches" Association="Self.FK_MasterMID_MasterBranches">
+            <End Role="MasterBranches" EntitySet="MasterBranches" />
+            <End Role="MasterMID" EntitySet="MasterMID" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MasterTID_MasterBranches" Association="Self.FK_MasterTID_MasterBranches">
+            <End Role="MasterBranches" EntitySet="MasterBranches" />
+            <End Role="MasterTID" EntitySet="MasterTID" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POS_Request" Association="Self.FK_POS_Request">
+            <End Role="Request" EntitySet="Request" />
+            <End Role="POS" EntitySet="POS" />
+          </AssociationSet>
+          <EntitySet Name="DetailsMaintenance" EntityType="MAP_DB_V2Model.DetailsMaintenance" />
+          <AssociationSet Name="FK_DetailsMaintenance_MasterMaintenance" Association="MAP_DB_V2Model.FK_DetailsMaintenance_MasterMaintenance">
+            <End Role="MasterMaintenance" EntitySet="MasterMaintenance" />
+            <End Role="DetailsMaintenance" EntitySet="DetailsMaintenance" />
+          </AssociationSet>
+          <EntitySet Name="MaintenanceFields" EntityType="MAP_DB_V2Model.MaintenanceFields" />
+          <AssociationSet Name="FK_MaintenanceFields_FileMaintenance" Association="MAP_DB_V2Model.FK_MaintenanceFields_FileMaintenance">
+            <End Role="FileMaintenance" EntitySet="FileMaintenance" />
+            <End Role="MaintenanceFields" EntitySet="MaintenanceFields" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DetailsMaintenance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Masted_Id" Type="Int64" />
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MasterMaintenance" Relationship="MAP_DB_V2Model.FK_DetailsMaintenance_MasterMaintenance" FromRole="DetailsMaintenance" ToRole="MasterMaintenance" />
+        </EntityType>
+        <Association Name="FK_DetailsMaintenance_MasterMaintenance">
+          <End Type="MAP_DB_V2Model.MasterMaintenance" Role="MasterMaintenance" Multiplicity="0..1" />
+          <End Type="MAP_DB_V2Model.DetailsMaintenance" Role="DetailsMaintenance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterMaintenance">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetailsMaintenance">
+              <PropertyRef Name="Masted_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MaintenanceFields">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="DBA_TradeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FileMaintenance" Relationship="MAP_DB_V2Model.FK_MaintenanceFields_FileMaintenance" FromRole="MaintenanceFields" ToRole="FileMaintenance" />
+        </EntityType>
+        <Association Name="FK_MaintenanceFields_FileMaintenance">
+          <End Type="MAP_DB_V2Model.FileMaintenance" Role="FileMaintenance" Multiplicity="1" />
+          <End Type="MAP_DB_V2Model.MaintenanceFields" Role="MaintenanceFields" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FileMaintenance">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MaintenanceFields">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MAP_DB_V2ModelStoreContainer" CdmEntityContainer="MAP_DB_V2Entities">
+    <EntitySetMapping Name="AdditionalFacility">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.AdditionalFacility)">
+        <MappingFragment StoreEntitySet="AdditionalFacility">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Branch_Id" ColumnName="Branch_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Affiliation">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.Affiliation)">
+        <MappingFragment StoreEntitySet="Affiliation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branches">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.Branches)">
+        <MappingFragment StoreEntitySet="Branches">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+          <ScalarProperty Name="AddFacility_Id" ColumnName="AddFacility_Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Business">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.Business)">
+        <MappingFragment StoreEntitySet="Business">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+          <ScalarProperty Name="Ownership_Id" ColumnName="Ownership_Id" />
+          <ScalarProperty Name="DTIRegDate" ColumnName="DTIRegDate" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileMaintenance">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.FileMaintenance)">
+        <MappingFragment StoreEntitySet="FileMaintenance">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaintenanceMID">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.MaintenanceMID)">
+        <MappingFragment StoreEntitySet="MaintenanceMID">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MonitorCode_Id" ColumnName="MonitorCode_Id" />
+          <ScalarProperty Name="CardPlans_Id" ColumnName="CardPlans_Id" />
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="MaintenanceMID1" ColumnName="MaintenanceMID1" />
+          <ScalarProperty Name="MaintenanceMID11" ColumnName="MaintenanceMID11" />
+          <ScalarProperty Name="MaintenanceMID12" ColumnName="MaintenanceMID12" />
+          <ScalarProperty Name="MaintenanceMID13" ColumnName="MaintenanceMID13" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterBranches">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.MasterBranches)">
+        <MappingFragment StoreEntitySet="MasterBranches">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+          <ScalarProperty Name="AddFacility_Id" ColumnName="AddFacility_Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterBusiness">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.MasterBusiness)">
+        <MappingFragment StoreEntitySet="MasterBusiness">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterMaintenance">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.MasterMaintenance)">
+        <MappingFragment StoreEntitySet="MasterMaintenance">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterMID">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.MasterMID)">
+        <MappingFragment StoreEntitySet="MasterMID">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MonitorCode_Id" ColumnName="MonitorCode_Id" />
+          <ScalarProperty Name="CardPlans_Id" ColumnName="CardPlans_Id" />
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="Branch_Id" ColumnName="Branch_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterTID">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.MasterTID)">
+        <MappingFragment StoreEntitySet="MasterTID">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Branch_Id" ColumnName="Branch_Id" />
+          <ScalarProperty Name="TID" ColumnName="TID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MID">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.MID)">
+        <MappingFragment StoreEntitySet="MID">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MonitorCode_Id" ColumnName="MonitorCode_Id" />
+          <ScalarProperty Name="CardPlans_Id" ColumnName="CardPlans_Id" />
+          <ScalarProperty Name="MID1" ColumnName="MID1" />
+          <ScalarProperty Name="Branch_Id" ColumnName="Branch_Id" />
+          <ScalarProperty Name="MID11" ColumnName="MID11" />
+          <ScalarProperty Name="MID12" ColumnName="MID12" />
+          <ScalarProperty Name="MID13" ColumnName="MID13" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POS">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.POS)">
+        <MappingFragment StoreEntitySet="POS">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Branch_Id" ColumnName="Branch_Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Request">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.Request)">
+        <MappingFragment StoreEntitySet="Request">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TID">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.TID)">
+        <MappingFragment StoreEntitySet="TID">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Branch_Id" ColumnName="Branch_Id" />
+          <ScalarProperty Name="TID1" ColumnName="TID1" />
+          <ScalarProperty Name="TID11" ColumnName="TID11" />
+          <ScalarProperty Name="TID12" ColumnName="TID12" />
+          <ScalarProperty Name="TID13" ColumnName="TID13" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdditionalMID">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.AdditionalMID)">
+        <MappingFragment StoreEntitySet="AdditionalMID">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MonitorCode_Id" ColumnName="MonitorCode_Id" />
+          <ScalarProperty Name="CardPlans_Id" ColumnName="CardPlans_Id" />
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="AdditionalMID1" ColumnName="AdditionalMID1" />
+          <ScalarProperty Name="AdditionalMID11" ColumnName="AdditionalMID11" />
+          <ScalarProperty Name="AdditionalMID12" ColumnName="AdditionalMID12" />
+          <ScalarProperty Name="AdditionalMID13" ColumnName="AdditionalMID13" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BranchAffiliation">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.BranchAffiliation)">
+        <MappingFragment StoreEntitySet="BranchAffiliation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Branch_Id" ColumnName="Branch_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetailsMaintenance">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.DetailsMaintenance)">
+        <MappingFragment StoreEntitySet="DetailsMaintenance">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Masted_Id" ColumnName="Masted_Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaintenanceFields">
+      <EntityTypeMapping TypeName="IsTypeOf(MAP_DB_V2Model.MaintenanceFields)">
+        <MappingFragment StoreEntitySet="MaintenanceFields">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DBA_TradeName" ColumnName="DBA_TradeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

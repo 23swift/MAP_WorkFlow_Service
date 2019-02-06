@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="173357b0-e416-43e0-8774-1a30410b485e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:52060/PaymentSolution.xamlx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PaymentSolution.wsdl" MetadataType="Wsdl" ID="6f8f6e69-ae40-435b-8b8e-c5c9bc53be71" SourceId="1" SourceUrl="http://localhost:52060/PaymentSolution.xamlx?wsdl" />
+    <MetadataFile FileName="PaymentSolution.xsd" MetadataType="Schema" ID="c60a395e-f00b-4bcf-84fa-57c1bc87fa16" SourceId="1" SourceUrl="http://localhost:52060/PaymentSolution.xamlx?xsd=xsd1" />
+    <MetadataFile FileName="PaymentSolution1.xsd" MetadataType="Schema" ID="c0e9d42b-ecea-4b22-b641-ef630a8a7d81" SourceId="1" SourceUrl="http://localhost:52060/PaymentSolution.xamlx?xsd=xsd0" />
+    <MetadataFile FileName="PaymentSolution.disco" MetadataType="Disco" ID="ab72b50f-38fd-4172-8f5e-980f64df48af" SourceId="1" SourceUrl="http://localhost:52060/PaymentSolution.xamlx?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
